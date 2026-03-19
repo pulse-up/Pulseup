@@ -101,7 +101,7 @@ Due to the high demand for campus clinic services, students require quick, relia
 
 ## 🛠️ Technologies & Tools
 
-*(Note: Add the specific tech stack here once finalized. E.g., React, Node.js, MongoDB, PostgreSQL, Firebase, etc.)*
+*(Note: Soon to be added.)*
 
 - **Frontend:** [TBD]
 - **Backend:** [TBD]
