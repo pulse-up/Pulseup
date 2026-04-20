@@ -114,7 +114,7 @@ Due to the high demand for campus clinic services, students require quick, relia
 
 Presented and developed by:
 - Matinisa Vunywalive Lubisi
--  Lindokuhle Nanto
+- Lindokuhle Nanto
 - Siphokuhle Nyana
 - Tiyani Ngwana 
 - Snalo Noni 
