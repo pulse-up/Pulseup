@@ -7,7 +7,7 @@
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 - [Project Overview](#-project-overview)
 - [The Challenge](#-the-challenge)
 - [The Solution](#-the-solution)
@@ -20,7 +20,7 @@
 
 ---
 
-## 🚀 Project Overview
+## Project Overview
 
 **Purpose of the System:**
 - **Improve Access:** Streamline access to campus healthcare services.
@@ -32,7 +32,7 @@ PulseUp bridges the gap between students and healthcare providers by offering re
 
 ---
 
-## ⚠️ The Challenge
+## The Challenge
 
 **Current Problems:**
 - Students are forced to arrive extremely early to secure limited clinic appointment slots.
@@ -47,7 +47,7 @@ PulseUp bridges the gap between students and healthcare providers by offering re
 
 ---
 
-## 💡 The Solution
+##  The Solution
 
 **PulseUp Provides:**
 - A robust online appointment scheduling system.
@@ -63,7 +63,7 @@ PulseUp bridges the gap between students and healthcare providers by offering re
 
 ---
 
-## ⚙️ Key Features
+## Key Features
 
 The PulseUp ecosystem includes a functional web/mobile application powered by a secure database-driven system and an interactive user interface. 
 
@@ -78,7 +78,7 @@ Core functionalities include:
 
 ---
 
-## 🎮 Gamification
+## Gamification
 
 To increase user engagement and improve system adoption, PulseUp incorporates interactive gamification elements designed to motivate students and encourage responsible health behaviors:
 
@@ -89,7 +89,7 @@ To increase user engagement and improve system adoption, PulseUp incorporates in
 
 ---
 
-## 🎯 Target Audience
+## Target Audience
 
 **Primary Users:**
 - Students requiring access to campus healthcare services.
@@ -101,6 +101,7 @@ Due to the high demand for campus clinic services, students require quick, relia
 
 ## 🛠️ Technologies & Tools
 
+*(Note: Soon to be added.)*
 
 - **Frontend:** React
 - **Backend:** Java, Node.js, and Express.Js
@@ -109,11 +110,11 @@ Due to the high demand for campus clinic services, students require quick, relia
 
 ---
 
-## 👥 Team
+##  Team
 
 Presented and developed by:
 - Matinisa Vunywalive Lubisi
--  Lindokuhle Nanto
+- Lindokuhle Nanto
 - Siphokuhle Nyana
 - Tiyani Ngwana 
 - Snalo Noni 
