@@ -103,10 +103,10 @@ Due to the high demand for campus clinic services, students require quick, relia
 
 *(Note: Soon to be added.)*
 
-- **Frontend:** [TBD]
-- **Backend:** [TBD]
-- **Database:** [TBD]
-- **Tools:** GitHub, Git, etc.
+- **Frontend:** React
+- **Backend:** Java, Node.js, and Express.Js
+- **Database:** Supabase/Firebase
+- **Tools:** GitHub, Trello, and Figma.
 
 ---
 
