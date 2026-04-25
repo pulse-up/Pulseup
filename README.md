@@ -101,8 +101,6 @@ Due to the high demand for campus clinic services, students require quick, relia
 
 ## 🛠️ Technologies & Tools
 
-*(Note: Soon to be added.)*
-
 - **Frontend:** React
 - **Backend:** Java, Node.js, and Express.Js
 - **Database:** Supabase/Firebase
