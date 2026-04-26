@@ -2,9 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Student Sign In</title>
+    <link rel="stylesheet" href="css folder/StudentSignin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
+
+<div class="app-container">
+    <div class="card">
+
+        <!-- Left panel -->
+        <div class="features-panel">
+            <h1>PulseUp</h1>
+            <div class="subtitle">STUDENT PORTAL</div>
+
+            <p class="description">
+                Join your campus health system.
+            </p>
+
+            <div class="feature-item">
+                <div class="icon-box green"><i class="fa-solid fa-calendar-check"></i></div>
+                <div>
+                    <h3>Real-time Booking</h3>
+                    <p>Secure your clinic visit instantly.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="icon-box blue"><i class="fa-solid fa-file-medical"></i></div>
+                <div>
+                    <h3>Health Records</h3>
+                    <p>Access your full history anytime.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="icon-box green"><i class="fa-solid fa-heart"></i></div>
+                <div>
+                    <h3>Health Points</h3>
+                    <p>Earn rewards for checkups.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right panel -->
+        <div class="form-panel">
+            <h2>Student Sign In</h2>
+
+            <div id="error" class="error-message"></div>
+            <div id="success" class="success-message"></div>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="student@mycput.ac.za">
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+
+                    <div class="password-wrapper">
+                        <input type="password" id="password" placeholder="Enter password">
+                        <i class="fa-solid fa-eye" id="togglePassword"></i>
+                    </div>
+                </div>
+
+                <div class="forgot-link">
+                    <button type="button" id="forgotPasswordBtn">Forgot Password?</button>
+                </div>
+
+                <button type="submit" class="btn-primary">Sign In</button>
+
+                <div class="switch-link">
+                    New here? <a href="StudentSignup.html">Create account</a>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- ✅ CORRECT SCRIPT PATH (DO NOT CHANGE POSITION) -->
+<script src="js/auth/signin.js"></script>
 
 </body>
 </html>

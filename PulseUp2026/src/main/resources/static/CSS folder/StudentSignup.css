@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+}
+
+.app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    width: 1000px;
+    max-width: 100%;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+/* ── LEFT PANEL ─────────────────────────────────────────────── */
+.features-panel {
+    flex: 1;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 40px;
+}
+
+.features-panel h1 {
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    margin-bottom: 16px;
+}
+
+.description {
+    margin-bottom: 30px;
+    opacity: 0.85;
+    font-size: 14px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 14px;
+    margin-top: 24px;
+    align-items: flex-start;
+}
+
+.feature-item h3 {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.feature-item p {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.icon-box {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.green { background: #2ecc71; }
+.blue  { background: #3498db; }
+
+/* ── RIGHT PANEL ────────────────────────────────────────────── */
+.form-panel {
+    flex: 1;
+    padding: 40px;
+}
+
+.form-panel h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* ── All inputs share the same height and spacing ───────────── */
+.form-panel input[type="text"],
+.form-panel input[type="email"],
+.input-group input[type="password"] {
+    width: 100%;
+    height: 50px;
+    padding: 0 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    display: block;
+    margin-top: 14px;
+}
+
+/* Password input needs right padding for the eye icon */
+.input-group input[type="password"] {
+    padding: 0 44px 0 16px;
+    margin-top: 0;        /* parent .input-group handles the top margin */
+}
+
+.form-panel input:focus,
+.input-group input:focus {
+    border-color: #667eea;
+}
+
+/* ── Password wrapper ───────────────────────────────────────── */
+.input-group {
+    position: relative;
+    margin-top: 14px;     /* same gap as standalone inputs */
+    display: block;
+}
+
+/* Eye sits inside the input on the right — no extra space below */
+.eye {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #667eea;
+    font-size: 16px;
+    user-select: none;
+    line-height: 1;
+    z-index: 2;
+}
+
+/* ── Password hints ─────────────────────────────────────────── */
+.password-hint {
+    background: #f8f9ff;
+    border: 1px solid #dce0f5;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.password-hint ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.password-hint li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #aaa;
+    transition: color 0.2s;
+}
+
+.hint-pass { color: #27ae60 !important; }
+.hint-fail { color: #e74c3c !important; }
+
+/* ── Button ─────────────────────────────────────────────────── */
+.btn-primary {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: opacity 0.2s;
+}
+
+.btn-primary:hover { opacity: 0.9; }
+
+/* ── Messages ───────────────────────────────────────────────── */
+.error-message {
+    color: #e74c3c;
+    background: #fdecea;
+    border: 1px solid #f5c6cb;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.success-message {
+    color: #27ae60;
+    background: #eafaf1;
+    border: 1px solid #a9dfbf;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.success-message i {
+    font-size: 20px;
+}
+
+/* ── Bottom link ────────────────────────────────────────────── */
+.switch-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.switch-link a {
+    color: #667eea;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.switch-link a:hover { text-decoration: underline; }
