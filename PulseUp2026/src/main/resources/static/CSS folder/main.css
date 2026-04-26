@@ -1,0 +1,23 @@
+body {
+    background-color: #f4f6f9;
+}
+
+.logo {
+    height: 100px;
+}
+
+.profile-img {
+    height: 50px;
+}
+
+.custom-card {
+    border-radius: 12px;
+}
+
+.sidebar {
+    min-height: 100vh;
+}
+
+.search-box {
+    width: 250px;
+}
