@@ -1,10 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Healthquests - Admin Panel</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg bg-white border-bottom px-4">
+        <div class="container-fluid">
+
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="Logo.jpeg" class="rounded-circle" style="height: 100px;">
+                <span>Healthquest page</span>
+            </a>
+            <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-bell"></i>
+                <i class="bi bi-gear"></i>
+                <img src="#" class="rounded-circle" style="height: 50px;">
+
+            </div>
+
+        </div>
+    </nav>
+
+</header>
+
+<body style="background-color:#f4f6f9;">
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- SIDEBAR -->
+        <aside class="col-md-2 bg-white border-end vh-100 p-3 position-relative">
+
+            <h5 class="mb-4 fw-bold">Clinic Admin</h5>
+
+            <ul class="nav flex-column gap-2">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="AdminProfile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="Appointments.html">Bookings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active bg-primary text-white rounded" href="#">Healthquests</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="Sicknote.html">Sick Notes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="History.html">History</a>
+                </li>
+            </ul>
+
+            <div class="position-absolute bottom-0 mb-4">
+                <a href="#" class="text-muted text-decoration-none">Logout</a>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="col-md-10 p-4">
+
+            <!-- HEADER -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h3 class="fw-bold mb-0">Healthquests</h3>
+                    <small class="text-muted">Manage patient health questionnaires</small>
+                </div>
+
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createHealthquestModal">
+                    + Create Healthquest
+                </button>
+            </div>
+
+            <!-- STATS CARDS -->
+            <div class="row g-3 mb-4">
+
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-0" style="border-radius:12px;">
+                        <div class="card-body">
+                            <h6 class="text-muted">Total Healthquests</h6>
+                            <h3 class="fw-bold">24</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-0" style="border-radius:12px;">
+                        <div class="card-body">
+                            <h6 class="text-muted">Completed</h6>
+                            <h3 class="fw-bold text-success">18</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-0" style="border-radius:12px;">
+                        <div class="card-body">
+                            <h6 class="text-muted">Pending</h6>
+                            <h3 class="fw-bold text-warning">6</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- TABLE SECTION -->
+            <div class="card shadow-sm border-0" style="border-radius:12px;">
+
+                <div class="card-header bg-white">
+                    <h6 class="mb-0 fw-bold">Recent Healthquests</h6>
+                </div>
+
+                <div class="card-body p-0">
+
+                    <table class="table table-hover mb-0">
+
+                        <thead class="table-light">
+                        <tr>
+                            <th>Patient Name</th>
+                            <th>Quest Type</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>General Check</td>
+                            <td><span class="badge bg-success">Completed</span></td>
+                            <td>2026-04-20</td>
+                            <td><button class="btn btn-sm btn-outline-primary"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#viewHealthquestModal">
+                                View
+                            </button></td>
+                        </tr>
+
+                        <tr>
+                            <td>Sarah Smith</td>
+                            <td>Blood Test</td>
+                            <td><span class="badge bg-warning text-dark">Pending</span></td>
+                            <td>2026-04-21</td>
+                            <td><button class="btn btn-sm btn-outline-primary"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#viewHealthquestModal">
+                                View
+                            </button></td>
+                        </tr>
+
+                        <tr>
+                            <td>Michael Brown</td>
+                            <td>Follow-up</td>
+                            <td><span class="badge bg-success">Completed</span></td>
+                            <td>2026-04-19</td>
+                            <td><button class="btn btn-sm btn-outline-primary"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#viewHealthquestModal">
+                                View
+                            </button></td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+    <!-- CREATE HEALTHQUEST MODAL -->
+    <div class="modal fade" id="createHealthquestModal" tabindex="-1">
+
+        <div class="modal-dialog modal-lg">
+
+            <div class="modal-content" style="border-radius:12px;">
+
+                <!-- Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Create Healthquest</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body">
+
+                    <form>
+
+                        <div class="row g-3">
+
+                            <!-- Patient Name -->
+                            <div class="col-md-6">
+                                <label class="form-label">Patient Name</label>
+                                <input type="text" class="form-control" placeholder="Enter patient name">
+                            </div>
+
+                            <!-- Patient ID -->
+                            <div class="col-md-6">
+                                <label class="form-label">Patient ID</label>
+                                <input type="text" class="form-control" placeholder="Enter ID number">
+                            </div>
+
+                            <!-- Quest Type -->
+                            <div class="col-md-6">
+                                <label class="form-label">Healthquest Type</label>
+                                <select class="form-select">
+                                    <option>General Check</option>
+                                    <option>Blood Test</option>
+                                    <option>X-Ray</option>
+                                    <option>Follow-up</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Priority -->
+                            <div class="col-md-6">
+                                <label class="form-label">Priority</label>
+                                <select class="form-select">
+                                    <option>Normal</option>
+                                    <option>High</option>
+                                    <option>Urgent</option>
+                                </select>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="col-12">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control" rows="3"
+                                          placeholder="Enter healthquest details..."></textarea>
+                            </div>
+
+                            <!-- Date -->
+                            <div class="col-md-6">
+                                <label class="form-label">Date</label>
+                                <input type="date" class="form-control">
+                            </div>
+
+                            <!-- Time -->
+                            <div class="col-md-6">
+                                <label class="form-label">Time</label>
+                                <input type="time" class="form-control">
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary">Save Healthquest</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- VIEW HEALTHQUEST MODAL -->
+    <div class="modal fade" id="viewHealthquestModal" tabindex="-1">
+
+        <div class="modal-dialog modal-lg">
+
+            <div class="modal-content" style="border-radius:12px;">
+
+                <!-- Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Healthquest Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <label class="text-muted">Patient Name</label>
+                            <p class="fw-bold">John Doe</p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="text-muted">Patient ID</label>
+                            <p class="fw-bold">PT-1024</p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="text-muted">Healthquest Type</label>
+                            <p class="fw-bold">General Check</p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="text-muted">Priority</label>
+                            <p><span class="badge bg-success">Normal</span></p>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="text-muted">Description</label>
+                            <p>
+                                Patient reported mild headache and fatigue. Requires routine check-up and vitals assessment.
+                            </p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="text-muted">Date</label>
+                            <p class="fw-bold">2026-04-20</p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="text-muted">Status</label>
+                            <p><span class="badge bg-success">Completed</span></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-warning">Edit</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

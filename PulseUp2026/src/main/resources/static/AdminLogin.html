@@ -2,9 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Admin Login – PulseUp</title>
+    <link rel="stylesheet" href="CSS folder/AdminLogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+<div class="auth-container">
+
+    <!-- LEFT SIDE -->
+    <div class="auth-left">
+        <div class="left-content">
+
+            <span class="badge">OFFICIAL CPUT HEALTH PORTAL</span>
+
+            <h1>Skip the Queue.<br>Prioritize You.</h1>
+
+            <p>Access campus healthcare. Book consultations, view clinical
+                records, and manage wellness from any device.</p>
+
+            <div class="feature-card">
+                <div class="icon-box blue"><i class="fa fa-calendar-check"></i></div>
+                <div>
+                    <h4>Instant Booking</h4>
+                    <p>Schedule appointments in under 60 seconds</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box blue"><i class="fa fa-file-medical"></i></div>
+                <div>
+                    <h4>Secure Health Vault</h4>
+                    <p>Your medical history is encrypted</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="auth-right">
+        <div class="form-box">
+
+            <h2>Staff Member Sign In</h2>
+            <p class="subtext">Welcome back! Please sign in to continue.</p>
+
+            <div id="error"   class="msg error"   style="display:none;"></div>
+            <div id="success" class="msg success" style="display:none;"></div>
+
+            <form id="adminLoginForm">
+
+                <label>CPUT Email</label>
+                <div class="input-group">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" id="email" placeholder="staff@cput.ac.za">
+                </div>
+
+                <label>Password</label>
+                <div class="input-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" id="password" placeholder="Enter password">
+                    <span class="eye" data-target="password">
+                        <i class="fa fa-eye"></i>
+                    </span>
+                </div>
+
+                <div class="row">
+                    <span></span>
+                    <a class="link" id="forgotPassword" href="#">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn-main">Sign In →</button>
+
+            </form>
+
+            <p class="bottom-text">
+                New to PulseUp?
+                <a class="link" href="AdminRegister.html">Create account</a>
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="js/auth/adminLogin.js"></script>
 </body>
 </html>

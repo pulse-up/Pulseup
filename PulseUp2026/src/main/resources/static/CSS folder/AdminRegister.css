@@ -1,0 +1,502 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* ── LAYOUT ─────────────────────────────────────────────────── */
+.auth-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* ── LEFT SIDE (LOGIN) ──────────────────────────────────────── */
+.auth-left {
+    flex: 1;
+    position: relative;
+    background: linear-gradient(135deg, #0b3c68, #0f5fa6);
+    color: white;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.auth-left::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    top: -80px;
+    right: -80px;
+}
+
+.left-content {
+    padding: 70px;
+    max-width: 420px;
+    z-index: 1;
+}
+
+.left-content p {
+    margin-top: 12px;
+    opacity: 0.85;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ── LEFT SIDE (REGISTER) ───────────────────────────────────── */
+.signup-left {
+    flex: 1;
+    background: #0b3c68;
+    color: white;
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup-left p {
+    margin-top: 12px;
+    opacity: 0.85;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ── BADGE ──────────────────────────────────────────────────── */
+.badge {
+    background: #ff7a00;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-block;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* ── HEADINGS ───────────────────────────────────────────────── */
+h1 {
+    font-size: 38px;
+    margin-top: 20px;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 24px;
+    color: #0b3c68;
+    margin-bottom: 4px;
+}
+
+/* ── FEATURE CARDS ──────────────────────────────────────────── */
+.feature-card,
+.feature-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.1);
+    transition: all 0.25s ease;
+}
+
+.feature-card:hover,
+.feature-box:hover {
+    transform: translateX(6px);
+    background: rgba(255,255,255,0.18);
+}
+
+.feature-card h4,
+.feature-box h4 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.feature-card p,
+.feature-box p {
+    margin: 4px 0 0;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+/* ── ICON BOX ───────────────────────────────────────────────── */
+.icon-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.icon-box.blue  { background: linear-gradient(135deg, #4FC3F7, #0288D1); color: white; }
+.icon-box.green { background: linear-gradient(135deg, #7CFC00, #2E7D32); color: white; }
+
+/* ── RIGHT SIDE ─────────────────────────────────────────────── */
+.auth-right {
+    flex: 1;
+    background: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    padding: 30px 0;
+}
+
+/* ── FORM BOX ───────────────────────────────────────────────── */
+.form-box {
+    background: white;
+    padding: 45px;
+    width: 420px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.subtext {
+    color: #777;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+/* ── LABELS ─────────────────────────────────────────────────── */
+label {
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    margin-top: 14px;
+    color: #333;
+}
+
+/* ── STANDALONE INPUTS ──────────────────────────────────────── */
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    outline: none;
+    border-color: #0b3c68;
+    box-shadow: 0 0 0 2px rgba(11,60,104,0.12);
+}
+
+/* ── SELECT ─────────────────────────────────────────────────── */
+.select-input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+
+.select-input:focus {
+    outline: none;
+    border-color: #0b3c68;
+    box-shadow: 0 0 0 2px rgba(11,60,104,0.12);
+}
+
+/* ── INPUT GROUP (password with eye) ────────────────────────── */
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 6px;
+    padding: 0 12px;
+    background: white;
+    transition: border-color 0.2s;
+    height: 48px;
+}
+
+.input-group:hover,
+.input-group:focus-within {
+    border-color: #0b3c68;
+    box-shadow: 0 0 0 2px rgba(11,60,104,0.12);
+}
+
+.input-group > i {
+    color: #888;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.input-group input {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    background: transparent;
+    height: 100%;
+}
+
+/* Eye toggle */
+.eye {
+    cursor: pointer;
+    color: #888;
+    font-size: 15px;
+    flex-shrink: 0;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.eye:hover { color: #0b3c68; }
+
+/* ── PASSWORD HINTS ─────────────────────────────────────────── */
+.password-hint {
+    background: #f0f4ff;
+    border: 1px solid #d0d9f0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.password-hint ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.password-hint li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #aaa;
+    transition: color 0.2s;
+}
+
+.hint-pass { color: #27ae60 !important; }
+.hint-fail { color: #e74c3c !important; }
+
+/* ── GRID ───────────────────────────────────────────────────── */
+.grid {
+    display: flex;
+    gap: 12px;
+}
+
+/* ── ROW ────────────────────────────────────────────────────── */
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 14px;
+    align-items: center;
+}
+
+/* ── BUTTON ─────────────────────────────────────────────────── */
+.btn-main {
+    margin-top: 22px;
+    width: 100%;
+    padding: 13px;
+    background: #0b3c68;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-main:hover {
+    background: #094a80;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* ── MESSAGES ───────────────────────────────────────────────── */
+.msg {
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.msg.error {
+    color: #c0392b;
+    background: #fdecea;
+    border: 1px solid #f5c6cb;
+}
+
+.msg.success {
+    color: #27ae60;
+    background: #eafaf1;
+    border: 1px solid #a9dfbf;
+    font-weight: 600;
+}
+
+.msg.forgot {
+    color: #0b3c68;
+    background: #e8f0fb;
+    border: 1px solid #b3cdf5;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* ── LINKS ──────────────────────────────────────────────────── */
+.link {
+    color: #0b3c68;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.link:hover { text-decoration: underline; }
+
+/* ── BOTTOM TEXT ────────────────────────────────────────────── */
+.bottom-text {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .auth-container { flex-direction: column; }
+    .auth-left, .auth-right, .signup-left { width: 100%; height: auto; }
+    .left-content, .signup-left { padding: 40px; }
+    .form-box { width: 90%; margin: 30px auto; }
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 28px; }
+    .left-content { padding: 30px; }
+    .form-box { padding: 25px; }
+    .grid { flex-direction: column; }
+    .row { flex-direction: column; gap: 10px; }
+}
+
+/* ── STEP INDICATOR ─────────────────────────────────────────── */
+.step-indicator {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.step span {
+    font-size: 11px;
+    color: #aaa;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.step-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.step.active .step-dot {
+    background: #0b3c68;
+    color: white;
+}
+
+.step.active span {
+    color: #0b3c68;
+}
+
+.step.done .step-dot {
+    background: #27ae60;
+    color: white;
+}
+
+.step.done span {
+    color: #27ae60;
+}
+
+.step-line {
+    flex: 1;
+    height: 2px;
+    background: #e0e0e0;
+    margin: 0 10px;
+    margin-bottom: 18px;
+}
+
+/* ── STEP 2 BUTTONS ─────────────────────────────────────────── */
+.step2-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.btn-back {
+    flex: 1;
+    padding: 13px;
+    background: white;
+    color: #0b3c68;
+    border: 2px solid #0b3c68;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-back:hover {
+    background: #f0f4ff;
+}
+
+.step2-buttons .btn-main {
+    flex: 2;
+    margin-top: 0;
+}
+
+/* ── STEP INDICATOR (HIDDEN) ────────────────────────────────── */
+.step-indicator {
+    display: none;
+}

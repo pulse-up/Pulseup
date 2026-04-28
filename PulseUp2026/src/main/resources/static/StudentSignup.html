@@ -2,9 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Student Sign Up</title>
+    <link rel="stylesheet" href="css folder/StudentSignin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+<div class="app-container">
+    <div class="card">
+
+        <!-- LEFT PANEL -->
+        <div class="features-panel">
+            <h1>PulseUp</h1>
+            <div class="subtitle">STUDENT PORTAL</div>
+            <p class="description">Join your campus health system.</p>
+
+            <div class="feature-item">
+                <div class="icon-box green"><i class="fa fa-calendar-check"></i></div>
+                <div>
+                    <h3>Real-time Booking</h3>
+                    <p>Secure your clinic visit instantly.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="icon-box blue"><i class="fa fa-file-medical"></i></div>
+                <div>
+                    <h3>Health Records</h3>
+                    <p>Access your full history anytime.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="icon-box green"><i class="fa fa-heart"></i></div>
+                <div>
+                    <h3>Health Points</h3>
+                    <p>Earn rewards for checkups.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="form-panel">
+            <h2>Create Account</h2>
+
+            <div id="error" class="error-message" style="display:none;"></div>
+
+            <!-- Success lives OUTSIDE the form so hiding the form doesn't hide this -->
+            <div id="success" class="success-message" style="display:none;"></div>
+
+            <form id="signupForm">
+                <input type="text"  id="fullName"      placeholder="Full Name">
+                <input type="text"  id="studentNumber" placeholder="Student Number">
+                <input type="email" id="email"         placeholder="Email (@mycput.ac.za)">
+
+                <!-- PASSWORD — eye span is INSIDE .input-group -->
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password">
+                    <span class="eye" data-target="password">
+                        <i class="fa fa-eye"></i>
+                    </span>
+                </div>
+
+                <!-- Live password hints -->
+                <div id="passwordHint" class="password-hint" style="display:none;">
+                    <ul>
+                        <li id="hintLength"><i class="fa fa-circle-xmark"></i> At least 6 characters</li>
+                        <li id="hintUpper"> <i class="fa fa-circle-xmark"></i> At least one uppercase letter</li>
+                        <li id="hintNumber"><i class="fa fa-circle-xmark"></i> At least one number</li>
+                    </ul>
+                </div>
+
+                <!-- CONFIRM PASSWORD — eye span is INSIDE .input-group -->
+                <div class="input-group">
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+                    <span class="eye" data-target="confirmPassword">
+                        <i class="fa fa-eye"></i>
+                    </span>
+                </div>
+
+                <button type="submit" class="btn-primary">Create Account</button>
+
+                <div class="switch-link">
+                    Already have an account?
+                    <a href="StudentSignin.html">Sign In</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/auth/signup.js"></script>
 </body>
 </html>

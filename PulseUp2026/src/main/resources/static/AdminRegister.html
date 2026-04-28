@@ -2,9 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Admin Register – PulseUp</title>
+    <link rel="stylesheet" href="CSS folder/AdminLogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+<div class="auth-container">
+
+    <!-- LEFT SIDE -->
+    <div class="signup-left">
+
+        <span class="badge">STAFF PORTAL</span>
+
+        <h1>Join Your Campus PulseUp.</h1>
+
+        <p>Access clinical precision and real-time health services designed
+            exclusively for CPUT staff.</p>
+
+        <div class="feature-box">
+            <div class="icon-box green"><i class="fa fa-calendar-check"></i></div>
+            <div>
+                <h4>Real-time Booking</h4>
+                <p>Secure your clinic visit in seconds</p>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <div class="icon-box blue"><i class="fa fa-file-medical"></i></div>
+            <div>
+                <h4>Digital Health Records</h4>
+                <p>Access your full medical history</p>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <div class="icon-box green"><i class="fa fa-heart"></i></div>
+            <div>
+                <h4>Health Points</h4>
+                <p>Earn rewards for wellness checkups</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="auth-right">
+        <div class="form-box">
+
+            <div id="error"   class="msg error"   style="display:none;"></div>
+            <div id="success" class="msg success" style="display:none;"></div>
+
+            <!-- STEP 1 -->
+            <div id="step1">
+                <h2>Create Account</h2>
+                <p class="subtext">Step 1 of 2 — Tell us about yourself.</p>
+
+                <label>Full Name</label>
+                <input type="text" id="fullName" placeholder="Dr. Jane Smith">
+
+                <label>Staff Number</label>
+                <input type="text" id="staffNumber" placeholder="e.g. 2140123">
+
+                <label>CPUT Email</label>
+                <div class="input-group">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" id="email" placeholder="staff@cput.ac.za">
+                </div>
+
+                <label>Role</label>
+                <select id="role" class="select-input">
+                    <option value="">Select your role</option>
+                    <option value="doctor">Doctor</option>
+                    <option value="nurse">Nurse</option>
+                    <option value="admin">Administrator</option>
+                </select>
+
+                <button type="button" id="nextBtn" class="btn-main">
+                    Next →
+                </button>
+
+                <p class="bottom-text">
+                    Already have an account?
+                    <a class="link" href="AdminLogin.html">Sign In</a>
+                </p>
+            </div>
+
+            <!-- STEP 2 -->
+            <div id="step2" style="display:none;">
+                <h2>Set Your Password</h2>
+                <p class="subtext">Step 2 of 2 — Almost there!</p>
+
+                <label>Password</label>
+                <div class="input-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" id="password" placeholder="Create password">
+                    <span class="eye" data-target="password">
+                        <i class="fa fa-eye"></i>
+                    </span>
+                </div>
+
+                <div id="passwordHint" class="password-hint" style="display:none;">
+                    <ul>
+                        <li id="hintLength"><i class="fa fa-circle-xmark"></i> At least 8 characters</li>
+                        <li id="hintUpper"> <i class="fa fa-circle-xmark"></i> At least one uppercase letter</li>
+                        <li id="hintNumber"><i class="fa fa-circle-xmark"></i> At least one number</li>
+                    </ul>
+                </div>
+
+                <label>Confirm Password</label>
+                <div class="input-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" id="confirmPassword" placeholder="Repeat password">
+                    <span class="eye" data-target="confirmPassword">
+                        <i class="fa fa-eye"></i>
+                    </span>
+                </div>
+
+                <div class="step2-buttons">
+                    <button type="button" id="backBtn" class="btn-back">
+                        ← Back
+                    </button>
+                    <button type="button" id="submitBtn" class="btn-main">
+                        Create Account
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="js/auth/adminRegister.js"></script>
 </body>
 </html>
