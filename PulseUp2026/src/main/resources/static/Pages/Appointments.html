@@ -6,15 +6,168 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Corrected paths -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/appointments.css">
+    <style>
+        :root {
+            --primary-blue: #0b3c66;
+            --secondary-blue: #125489;
+            --light-bg: #f4f6f9;
+            --card-bg: #ffffff;
+            --border-light: #e8edf3;
+            --text-dark: #212c57;
+            --text-muted: #7b8794;
+            --success-green: #28c76f;
+            --danger-red: #ea5455;
+        }
 
+        body {
+            background-color: var(--light-bg) !important;
+            color: var(--text-dark);
+            font-family: Arial, sans-serif;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .navbar-brand span {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .form-control {
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            padding: 10px 14px;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-blue);
+            box-shadow: 0 0 0 0.2rem rgba(11, 60, 102, 0.1);
+        }
+
+        /* SIDEBAR */
+        aside {
+            background-color: white !important;
+        }
+
+        .nav-link {
+            border-radius: 10px;
+            padding: 10px 14px;
+            transition: 0.2s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #edf5fc;
+        }
+
+        .nav-link.active {
+            background-color: var(--primary-blue) !important;
+            color: white !important;
+        }
+
+        /* CARDS */
+        .card {
+            border: none;
+            border-radius: 18px;
+            background-color: var(--card-bg);
+        }
+
+        .shadow-sm {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05) !important;
+        }
+
+        /* BUTTONS */
+        .btn-primary {
+            background-color: var(--primary-blue);
+            border: none;
+            border-radius: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-blue);
+        }
+
+        .btn-outline-danger {
+            border-radius: 10px;
+            color: var(--danger-red);
+            border-color: var(--danger-red);
+        }
+
+        .btn-outline-danger:hover {
+            background-color: var(--danger-red);
+            color: white;
+        }
+
+        /* BADGES */
+        .badge.bg-dark {
+            background-color: var(--primary-blue) !important;
+        }
+
+        .badge.bg-success {
+            background-color: var(--success-green) !important;
+        }
+
+        .badge.bg-danger {
+            background-color: var(--danger-red) !important;
+        }
+
+        /* LIVE QUEUE CIRCLE */
+        .rounded-circle.border-4 {
+            border-color: var(--primary-blue) !important;
+            color: var(--primary-blue);
+            background: #f8fbff;
+        }
+
+        /* TABLE */
+        .table {
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .table thead {
+            background-color: #f8fafc;
+        }
+
+        .table-light {
+            background-color: #f8fafc !important;
+        }
+
+        table td,
+        table th {
+            vertical-align: middle;
+            padding: 16px !important;
+        }
+
+        /* LINKS */
+        a {
+            color: var(--primary-blue);
+        }
+
+        a:hover {
+            color: var(--secondary-blue);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: white;
+            border-top: 1px solid var(--border-light);
+        }
+
+        /* ICON CONTAINERS */
+        .bg-light {
+            background-color: #edf5fc !important;
+        }
+
+    </style>
 </head>
 
 <body class="bg-light">
@@ -91,7 +244,7 @@
                             <span class="badge bg-dark mt-5">LIVE NOW</span>
                         </div>
 
-                        <div class="mx-auto my-4 d-flex justify-content-center align-items-center rounded-circle border border-4"
+                        <div class="queue-circle mx-auto my-4 d-flex justify-content-center align-items-center rounded-circle"
                              style="width: 140px; height: 140px;">
                             <h2 class="fw-bold">#4</h2>
                         </div>
