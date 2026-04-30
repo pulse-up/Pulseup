@@ -8,13 +8,103 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #0b3c66;
+            --secondary-blue: #125489;
+            --light-bg: #f4f6f9;
+            --card-bg: #ffffff;
+            --border-light: #e8edf3;
+            --text-dark: #1f2d3d;
+            --text-muted: #7b8794;
+            --success-green: #28c76f;
+            --warning-yellow: #ff9f43;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        /* BUTTONS */
+        .btn-primary {
+            background-color: var(--primary-blue);
+            border: none;
+            border-radius: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-blue);
+        }
+
+        .btn-outline-primary {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            border-radius: 10px;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        .btn-warning {
+            background-color: var(--warning-yellow);
+            border: none;
+            border-radius: 10px;
+        }
+
+        .btn-warning:hover {
+            opacity: 0.9;
+        }
+
+        /* CARDS */
+        .card {
+            border: none;
+            border-radius: 18px;
+            background-color: var(--card-bg);
+        }
+
+        .shadow-sm {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05) !important;
+        }
+
+        /* INPUTS */
+        .form-control {
+            border-radius: 10px;
+            border: 1px solid var(--border-light);
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-blue);
+            box-shadow: 0 0 0 0.2rem rgba(11, 60, 102, 0.1);
+        }
+
+        /* SWITCHES */
+        .form-check-input:checked {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .text-muted {
+            color: var(--text-muted) !important;
+        }
+
+    </style>
 </head>
 
 <body>
 
-<nav class="navbar bg-white border-bottom px-4">
+<nav class="navbar border-bottom px-4">
     <div class="container-fluid">
-        <span class="fw-bold">Settings</span>
+        <span class="fw-bold" style="color: var(--primary-blue);">Settings</span>
         <button onclick="goBack()" class="btn btn-outline-primary btn-sm">Back</button>
     </div>
 </nav>
@@ -22,17 +112,14 @@
 <div class="container-fluid">
     <div class="row">
 
-        <aside class="col-md-3 col-lg-2 bg-white border-end vh-100 p-3">
-
-
-        </aside>
+        <!-- Sidebar (kept for consistency with other pages) -->
+        <aside class="col-md-3 col-lg-2 bg-white border-end vh-100 p-3"></aside>
 
         <section class="col-md-9 col-lg-10 p-4">
 
             <h4 class="mb-4">General Settings</h4>
 
             <div class="card p-4 shadow-sm mb-4">
-
                 <h6 class="text-muted mb-3">Profile Settings</h6>
 
                 <div class="mb-3">
@@ -49,7 +136,6 @@
             </div>
 
             <div class="card p-4 shadow-sm mb-4">
-
                 <h6 class="text-muted mb-3">Security</h6>
 
                 <div class="mb-3">
@@ -62,7 +148,6 @@
             </div>
 
             <div class="card p-4 shadow-sm mb-4">
-
                 <h6 class="text-muted mb-3">Notifications</h6>
 
                 <div class="form-check form-switch mb-2">
@@ -77,12 +162,10 @@
             </div>
 
             <div class="card p-4 shadow-sm">
-
                 <h6 class="text-muted mb-3">Appearance</h6>
 
-                <button class="btn btn-outline-dark me-2" onclick="setTheme('light')">Light</button>
-                <button class="btn btn-dark" onclick="setTheme('dark')">Dark</button>
-
+                <button class="btn btn-outline-primary me-2" onclick="setTheme('light')">Light</button>
+                <button class="btn btn-primary" onclick="setTheme('dark')">Dark</button>
             </div>
 
         </section>
@@ -94,11 +177,11 @@
     function setTheme(mode) {
         document.documentElement.setAttribute("data-bs-theme", mode);
     }
+
     function goBack() {
-    window.history.back();
-}
+        window.history.back();
+    }
 </script>
 
 </body>
 </html>
-
