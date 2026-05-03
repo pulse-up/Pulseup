@@ -1,0 +1,143 @@
+:root {
+    --primary-blue: #3f607e;
+    --secondary-blue: #125489;
+    --light-bg: #f4f6f9;
+    --card-bg: rgb(111 126 147 / 0.51);
+    --border-light: #e8edf3;
+    --text-dark: #1f2d3d;
+    --text-muted: #7b8794;
+    --success-green: #28c76f;
+    --warning-yellow: #ff9f43;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+}
+
+.navbar {
+    background-color: white !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.navbar-brand span {
+    color: var(--primary-blue);
+}
+
+aside {
+    background-color: white;
+}
+
+.nav-link {
+    border-radius: 10px;
+    padding: 10px 14px;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    background-color: #edf5fc;
+}
+
+.nav-link.active {
+    background-color: var(--primary-blue) !important;
+    color: white !important;
+}
+
+.card {
+    border: none;
+    border-radius: 18px;
+    background-color: var(--card-bg);
+}
+
+.shadow-sm {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-blue);
+}
+
+.btn-outline-primary {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.badge.bg-success {
+    background-color: var(--success-green) !important;
+}
+
+.badge.bg-warning {
+    background-color: var(--warning-yellow) !important;
+}
+
+.table thead {
+    background-color: #f8fafc;
+}
+
+body {
+    background: linear-gradient(to right, #eef5f9, #f8fbfd);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+aside {
+    background-color: #ffffff;
+}
+
+
+.navbar {
+    background-color: #ffffff;
+}
+
+.stat-card {
+    border-radius: 14px;
+    transition: 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.total-card {
+    background-color: #e3f2fd;
+    border-left: 6px solid #0d6efd;
+}
+
+.approved-card {
+    background-color: #e8f5e9;
+    border-left: 6px solid #198754;
+}
+
+.pending-card {
+    background-color: #fff8e1;
+    border-left: 6px solid #ffc107;
+}
+
+.card {
+    border-radius: 14px;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.nav-link.active {
+    background-color: #0d6efd;
+    color: white !important;
+    border-radius: 8px;
+}
