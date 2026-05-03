@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 <head>
-    <title>Healthquests</title>
+    <title>Health quests</title>
 
     <link rel="stylesheet" href="CSS folder/healthquest.css">
     <meta charset="utf-8" />
@@ -20,16 +20,16 @@
         <div class="container-fluid">
 
             <a class="navbar-brand fw-bold" href="#">
-                <img src="Logo.jpeg" class="rounded-circle" style="height: 100px;">
+                <img alt="Logo Pic" src="Logo.jpeg" class="rounded-circle" style="height: 100px;">
                 <span>Healthquest Page</span>
             </a>
 
             <div class="d-flex align-items-center gap-3">
-                <a href="settings.html" class="text-dark">
+                <a href="Settings.html" class="text-dark">
                     <i class="bi bi-gear"></i>
                 </a>
                 <i class="bi bi-bell"></i>
-                <img src="#" class="rounded-circle" style="height: 40px;">
+                <img alt="Admin Pic" src="#" class="rounded-circle" style="height: 40px;">
             </div>
 
         </div>
@@ -42,7 +42,7 @@
         <!-- Sidebar -->
         <aside class="col-md-2 border-end vh-100 p-3 position-relative">
             <ul class="nav flex-column gap-2">
-                <li><a class="nav-link text-dark" href="Profile.html">Profile</a></li>
+                <li><a class="nav-link text-dark" href="AdminProfile.html">Profile</a></li>
                 <li><a class="nav-link text-dark" href="Appointments.html">Bookings</a></li>
                 <li><a class="nav-link active" href="#">Healthquests</a></li>
                 <li><a class="nav-link text-dark" href="Sicknote.html">Sick Notes</a></li>
@@ -182,25 +182,33 @@
 
                         <div class="col-md-6">
                             <label class="form-label">Patient Name</label>
-                            <input type="text" class="form-control">
+                            <label>
+                                <input type="text" class="form-control">
+                            </label>
                         </div>
 
                         <div class="col-md-6">
                             <label class="form-label">Patient ID</label>
-                            <input type="text" class="form-control">
+                            <label>
+                                <input type="text" class="form-control">
+                            </label>
                         </div>
 
                         <div class="col-md-6">
                             <label class="form-label">Type</label>
-                            <select class="form-select">
-                                <option>General Check</option>
-                                <option>Blood Test</option>
-                            </select>
+                            <label>
+                                <select class="form-select">
+                                    <option>General Check</option>
+                                    <option>Blood Test</option>
+                                </select>
+                            </label>
                         </div>
 
                         <div class="col-md-6">
                             <label class="form-label">Date</label>
-                            <input type="date" class="form-control">
+                            <label>
+                                <input type="date" class="form-control">
+                            </label>
                         </div>
 
                     </div>

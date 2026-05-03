@@ -35,7 +35,6 @@ body {
     color: white !important;
 }
 
-/* CARDS */
 .card {
     border: none;
     border-radius: 18px;
@@ -46,7 +45,6 @@ body {
     box-shadow: 0 6px 18px rgba(0,0,0,0.05) !important;
 }
 
-/* BUTTONS */
 .btn-primary {
     background-color: var(--primary-blue);
     border: none;
@@ -57,20 +55,17 @@ body {
     background-color: var(--secondary-blue);
 }
 
-/* INPUTS */
 .form-control,
 .form-select {
     border-radius: 10px;
     border: 1px solid var(--border-light);
 }
 
-/* PANEL COLORS */
 .card.personal { border-top: 4px solid var(--primary-blue); }
 .card.activity { border-top: 4px solid #20c997; }
 .card.professional { border-top: 4px solid #7367f0; }
 .card.stats { border-top: 4px solid var(--warning-yellow); }
 
-/* ICON BADGES */
 .panel-icon {
     font-size: 18px;
     padding: 8px;
