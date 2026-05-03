@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <title>Staff Profile</title>
+
+    <link rel="stylesheet" href="CSS folder/profile.css">
+    <link rel="stylesheet" href="CSS folder/main.css">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg border-bottom px-4">
+        <div class="container-fluid">
+
+            <a class="navbar-brand fw-bold" href="#">
+                <img alt="Logo image" src="Logo.jpeg" class="rounded-circle" style="height: 100px;">
+                <span>Profile</span>
+            </a>
+
+            <div class="d-flex align-items-center gap-3">
+                <a href="Settings.html" class="text-dark"><i class="bi bi-gear"></i></a>
+                <i class="bi bi-bell"></i>
+                <img alt="Admin Image" src="#" class="rounded-circle" style="height: 70px;">
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+<main class="container-fluid">
+    <div class="row">
+
+        <aside class="col-md-2 border-end vh-100 p-3">
+
+            <ul class="nav flex-column gap-2">
+                <li><a class="nav-link active" href="#">Profile</a></li>
+                <li><a class="nav-link text-dark" href="Appointments.html">Bookings</a></li>
+                <li><a class="nav-link text-dark" href="Healthquest.html">Health quests</a></li>
+                <li><a class="nav-link text-dark" href="Sicknote.html">Sick Notes</a></li>
+                <li><a class="nav-link text-dark" href="History.html">History</a></li>
+            </ul>
+
+            <div class="position-absolute bottom-0 mb-4">
+                <a href="#" class="text-muted text-decoration-none">Logout</a>
+            </div>
+
+        </aside>
+
+        <section class="col-md-10 p-4">
+
+            <div class="profile-header d-flex justify-content-between align-items-center mb-4">
+
+                <div class="d-flex align-items-center gap-3">
+                    <img alt="Admin Image" src="#" class="rounded-circle border border-3 border-white" style="height: 90px;">
+                    <div>
+                        <h4 class="mb-1">Dr Inga Plati</h4>
+                        <small class="status-badge">Active</small>
+                        <div class="mt-1 small">Clinic Doctor • Campus Health Services</div>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="btn btn-light btn-sm me-2">Message</button>
+                    <button class="btn btn-outline-light btn-sm">Edit Profile</button>
+                </div>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-8">
+
+                    <<div class="card personal shadow-sm p-4 mb-4">
+                    <h6 class="mb-3">
+                        <i class="bi bi-person icon-blue panel-icon"></i>
+                        Personal Information
+                    </h6>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <div class="label">Full Name</div>
+                                <strong>Dr Inga Plati</strong>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="label">Staff Number</div>
+                                <strong>12345</strong>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="label">Phone</div>
+                                <strong>071 234 5678</strong>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="label">Email</div>
+                                <strong>inga@email.com</strong>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="label">Address</div>
+                                <strong>Cape Town</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card activity shadow-sm p-4">
+                        <h6 class="mb-3">
+                            <i class="bi bi-activity icon-green panel-icon"></i>
+                            Recent Activity
+                        </h6>
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Attended appointment with Student #203</li>
+                            <li class="list-group-item">Updated patient sick note</li>
+                            <li class="list-group-item">Reviewed health questionnaire</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="card professional shadow-sm p-4 mb-4">
+                        <h6 class="mb-3">
+                            <i class="bi bi-award icon-purple panel-icon"></i>
+                            Professional Info
+                        </h6>
+
+                        <p><span class="label">Qualification</span><br><strong>PhD</strong></p>
+                        <p><span class="label">Institution</span><br><strong>UCT</strong></p>
+                        <p><span class="label">Position</span><br><strong>Doctor</strong></p>
+                        <p><span class="label">Experience</span><br><strong>4 Years</strong></p>
+
+                    </div>
+
+                    <div class="card stats shadow-sm p-4">
+                        <h6 class="mb-3">
+                            <i class="bi bi-bar-chart icon-orange panel-icon"></i>
+                            System Stats
+                        </h6>
+
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted">Patients Seen</span>
+                            <strong>320</strong>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted">Appointments</span>
+                            <strong>45</strong>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <span class="text-muted">Health quests</span>
+                            <strong>18</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
