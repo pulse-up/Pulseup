@@ -1,0 +1,84 @@
+:root {
+    --primary-blue: #0b3c66;
+    --secondary-blue: #125489;
+    --light-bg: #f4f6f9;
+    --card-bg: #ffffff;
+    --border-light: #e8edf3;
+    --text-dark: #1f2d3d;
+    --text-muted: #7b8794;
+    --success-green: #28c76f;
+    --warning-yellow: #ff9f43;
+    --danger-red: #ea5455;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+}
+
+.navbar {
+    background-color: white !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.nav-link {
+    border-radius: 10px;
+    padding: 10px 14px;
+}
+
+.nav-link:hover {
+    background-color: #edf5fc;
+}
+
+.nav-link.active {
+    background-color: var(--primary-blue) !important;
+    color: white !important;
+}
+
+/* CARDS */
+.card {
+    border: none;
+    border-radius: 18px;
+    background-color: var(--card-bg);
+}
+
+.shadow-sm {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05) !important;
+}
+
+/* BUTTONS */
+.btn-primary {
+    background-color: var(--primary-blue);
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-blue);
+}
+
+/* INPUTS */
+.form-control,
+.form-select {
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+}
+
+/* PANEL COLORS */
+.card.personal { border-top: 4px solid var(--primary-blue); }
+.card.activity { border-top: 4px solid #20c997; }
+.card.professional { border-top: 4px solid #7367f0; }
+.card.stats { border-top: 4px solid var(--warning-yellow); }
+
+/* ICON BADGES */
+.panel-icon {
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 10px;
+    margin-right: 8px;
+}
+
+.icon-blue { background: rgba(11,60,102,0.1); color: #0b3c66; }
+.icon-green { background: rgba(32,201,151,0.1); color: #20c997; }
+.icon-purple { background: rgba(115,103,240,0.1); color: #7367f0; }
+.icon-orange { background: rgba(255,159,67,0.1); color: #ff9f43; }

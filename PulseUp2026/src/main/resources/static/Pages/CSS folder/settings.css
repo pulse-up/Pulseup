@@ -16,13 +16,11 @@ body {
     color: var(--text-dark);
 }
 
-/* NAVBAR */
 .navbar {
     background-color: white !important;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-/* BUTTONS */
 .btn-primary {
     background-color: var(--primary-blue);
     border: none;
@@ -54,7 +52,6 @@ body {
     opacity: 0.9;
 }
 
-/* CARDS */
 .card {
     border: none;
     border-radius: 18px;
@@ -65,7 +62,6 @@ body {
     box-shadow: 0 6px 18px rgba(0,0,0,0.05) !important;
 }
 
-/* INPUTS */
 .form-control {
     border-radius: 10px;
     border: 1px solid var(--border-light);
@@ -76,7 +72,6 @@ body {
     box-shadow: 0 0 0 0.2rem rgba(11, 60, 102, 0.1);
 }
 
-/* SWITCHES */
 .form-check-input:checked {
     background-color: var(--primary-blue);
     border-color: var(--primary-blue);
