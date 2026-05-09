@@ -2,9 +2,426 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulseUp — Student Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy:       #0f1e3c;
+            --teal:       #0c7a6e;
+            --accent:     #1ec9b7;
+            --white:      #ffffff;
+            --bg:         #f0f3f8;
+            --card:       #ffffff;
+            --border:     #dde3ec;
+            --muted:      #8a96a8;
+            --text:       #1a2340;
+            --green:      #22c55e;
+            --sidebar-w:  200px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+        }
+
+        /* ── SIDEBAR ── */
+        .sidebar {
+            width: var(--sidebar-w);
+            background: var(--navy);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 28px 0;
+            flex-shrink: 0;
+            position: fixed;
+            top: 0; left: 0; bottom: 0;
+        }
+
+        .sidebar-logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.3px;
+            padding: 0 22px;
+            margin-bottom: 36px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            padding: 11px 22px;
+            color: #a0aec0;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.15s, color 0.15s;
+        }
+        .nav-item:hover { color: var(--white); background: rgba(255,255,255,0.07); }
+        .nav-item.active {
+            background: rgba(255,255,255,0.12);
+            color: var(--white);
+            border-radius: 10px;
+            margin: 0 10px;
+            padding: 11px 12px;
+        }
+
+        .nav-spacer { flex: 1; }
+
+        /* ── MAIN ── */
+        .main {
+            margin-left: var(--sidebar-w);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ── TOP NAV ── */
+        .topnav {
+            background: var(--white);
+            height: 58px;
+            display: flex;
+            align-items: center;
+            padding: 0 28px;
+            gap: 16px;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .search-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0 12px;
+            height: 34px;
+            flex: 1;
+            max-width: 300px;
+        }
+        .search-wrap input {
+            border: none; background: transparent; outline: none;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px; color: var(--text); width: 100%;
+        }
+
+        .topnav-right {
+            margin-left: auto;
+            display: flex; align-items: center; gap: 12px;
+        }
+
+        .avatar-nav {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            background: #c9d4e8;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 12px; font-weight: 600; color: var(--navy);
+            overflow: hidden;
+        }
+
+        /* ── PAGE BODY & FORM ── */
+        .page-body {
+            padding: 28px;
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .profile-form { display: contents; }
+
+        .action-bar {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 4px;
+        }
+
+        .btn-discard {
+            height: 36px;
+            padding: 0 20px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            border-radius: 9px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .btn-save {
+            height: 36px;
+            padding: 0 20px;
+            border: none;
+            background: var(--navy);
+            border-radius: 9px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--white);
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .btn-save:hover { background: var(--teal); }
+
+        /* ── PROFILE CARD ── */
+        .profile-card {
+            background: var(--card);
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            padding: 28px 32px 32px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .avatar-upload-container {
+            position: relative;
+            width: 72px; height: 72px;
+            cursor: pointer;
+        }
+        .profile-avatar-main {
+            width: 72px; height: 72px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c9d4e8, #a0b0cc);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px; font-weight: 700; color: var(--navy);
+            overflow: hidden;
+        }
+        .upload-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 30, 60, 0.4);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white; opacity: 0; transition: opacity 0.2s;
+        }
+        .avatar-upload-container:hover .upload-overlay { opacity: 1; }
+
+        .profile-name-wrap h2 {
+            font-size: 22px; font-weight: 700; color: var(--navy);
+            letter-spacing: -0.3px; margin-bottom: 4px;
+        }
+        .status-badge {
+            display: inline-flex; align-items: center; gap: 5px;
+            background: #dcfce7; color: #15803d; font-size: 12px;
+            font-weight: 600; border-radius: 20px; padding: 3px 10px;
+        }
+
+        .section-label {
+            font-size: 11px; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 1px; color: var(--muted); margin-bottom: 16px; margin-top: 26px;
+        }
+
+        .form-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+        }
+
+        .form-group { display: flex; flex-direction: column; gap: 5px; }
+        .form-group label {
+            font-size: 11px; font-weight: 500; color: var(--muted);
+            text-transform: uppercase;
+        }
+        .form-group input, .form-group select {
+            height: 38px; background: var(--bg); border: 1px solid var(--border);
+            border-radius: 8px; padding: 0 12px; font-family: 'DM Sans', sans-serif;
+            font-size: 13px; color: var(--navy); outline: none;
+        }
+        .form-group input:focus { border-color: var(--teal); background: #fff; }
+
+        /* ── HEALTH SNAPSHOT CARD ── */
+        .health-card {
+            background: var(--card); border-radius: 18px; border: 1px solid var(--border);
+            padding: 22px; position: sticky; top: 86px;
+        }
+    </style>
 </head>
 <body>
+
+<aside class="sidebar">
+    <div class="sidebar-logo">PulseUp</div>
+
+    <a class="nav-item" href="AdminProfile.html">Dashboard</a>
+
+    <a class="nav-item active" href="Appointments.html">Bookings</a>
+
+    <a class="nav-item" href="Healthquest.html">Health Quests</a>
+
+    <a class="nav-item" href="Sicknote.html">Sick Notes</a>
+</aside>
+
+<div class="main">
+    <nav class="topnav">
+        <div class="search-wrap">
+            <input type="text" placeholder="Search appointments…">
+        </div>
+        <div class="topnav-right">
+            <div class="avatar-nav" id="navAvatar">??</div>
+        </div>
+    </nav>
+
+    <form id="studentProfileForm" class="profile-form">
+        <div class="page-body">
+            <div class="action-bar">
+                <button type="reset" class="btn-discard" id="resetBtn">Reset</button>
+                <button type="submit" class="btn-save">Save Profile</button>
+            </div>
+
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="avatar-upload-container" onclick="document.getElementById('fileInput').click()">
+                        <div class="profile-avatar-main" id="avatarDisplay">??</div>
+                        <div class="upload-overlay">
+                            <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                        </div>
+                        <input type="file" id="fileInput" name="profileImage" hidden accept="image/*">
+                    </div>
+
+                    <div class="profile-name-wrap">
+                        <h2 id="userNameDisplay">New Student Profile</h2>
+                        <div class="status-badge">New User</div>
+                    </div>
+                </div>
+
+                <div class="section-label">Personal Details</div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="fullName" id="fullNameInput" placeholder="Enter full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Student Number</label>
+                        <input type="text" name="studentNumber" placeholder="9-digit student ID" pattern="\d{9}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="student@mycput.ac.za" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" placeholder="+27 ..." required>
+                    </div>
+                </div>
+
+                <div class="section-label" style="margin-top: 20px;">Emergency Contact</div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Contact Name</label>
+                        <input type="text" name="emergencyName" placeholder="Next of Kin Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Relationship</label>
+                        <select name="emergencyRelation">
+                            <option value="Parent">Parent</option>
+                            <option value="Sibling">Sibling</option>
+                            <option value="Guardian">Guardian</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Phone</label>
+                        <input type="tel" name="emergencyPhone" placeholder="+27 ..." required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="health-card">
+                <div class="section-label" style="margin-top: 0;">Health Snapshot</div>
+                <div class="form-group">
+                    <label>Blood Type</label>
+                    <select name="bloodType">
+                        <option value="O+">O Positive</option>
+                        <option value="O-">O Negative</option>
+                        <option value="A+">A Positive</option>
+                        <option value="B+">B Positive</option>
+                    </select>
+                </div>
+                <div class="section-label">Known Allergies</div>
+                <div class="form-group">
+                    <input type="text" name="allergies" placeholder="e.g. Peanuts, Penicillin">
+                    <small style="color:var(--muted); font-size:10px;">Separate with commas</small>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    // SELECTING ELEMENTS
+    const form = document.getElementById('studentProfileForm');
+    const fileInput = document.getElementById('fileInput');
+    const avatarDisplay = document.getElementById('avatarDisplay'); // Large profile circle
+    const navAvatar = document.getElementById('navAvatar');         // Top-right nav circle
+    const nameInput = document.getElementById('fullNameInput');     // Name input field
+    const headingName = document.getElementById('userNameDisplay'); // Large card title
+
+    // 1. DYNAMIC INITIALS LOGIC
+    nameInput.addEventListener('input', () => {
+        const fullName = nameInput.value.trim();
+
+        // Update Heading Text
+        headingName.textContent = fullName || "New Student Profile";
+
+        // Update Initials in Circles
+        if (fullName) {
+            const parts = fullName.split(' ').filter(p => p.length > 0);
+            let initials = "";
+
+            if (parts.length > 1) {
+                initials = parts[0][0] + parts[parts.length - 1][0];
+            } else {
+                initials = parts[0][0];
+            }
+
+            const finalInitials = initials.toUpperCase();
+            avatarDisplay.textContent = finalInitials;
+            navAvatar.textContent = finalInitials;
+        } else {
+            avatarDisplay.textContent = "??";
+            navAvatar.textContent = "??";
+        }
+    });
+
+    // 2. PHOTO UPLOAD PREVIEW
+    fileInput.onchange = () => {
+        const [file] = fileInput.files;
+        if (file) {
+            const imgUrl = URL.createObjectURL(file);
+            const imgTag = `<img src="${imgUrl}" style="width:100%; height:100%; object-fit:cover;">`;
+            avatarDisplay.innerHTML = imgTag;
+            navAvatar.innerHTML = imgTag;
+        }
+    };
+
+    // 3. FORM RESET LOGIC
+    document.getElementById('resetBtn').addEventListener('click', () => {
+        headingName.textContent = "New Student Profile";
+        avatarDisplay.textContent = "??";
+        navAvatar.textContent = "??";
+    });
+
+    // 4. FORM SUBMISSION
+    form.onsubmit = (e) => {
+        e.preventDefault();
+        alert("Profile Created for " + nameInput.value + "!");
+        console.log("Form data submitted successfully.");
+    };
+</script>
 
 </body>
 </html>
