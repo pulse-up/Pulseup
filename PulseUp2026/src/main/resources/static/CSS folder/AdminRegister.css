@@ -8,13 +8,13 @@ body {
     font-family: "Segoe UI", sans-serif;
 }
 
-/* ── LAYOUT ─────────────────────────────────────────────────── */
+/* ── LAYOUT */
 .auth-container {
     display: flex;
     height: 100vh;
 }
 
-/* ── LEFT SIDE (LOGIN) ──────────────────────────────────────── */
+/* ── LEFT SIDE (LOGIN) */
 .auth-left {
     flex: 1;
     position: relative;
@@ -49,7 +49,7 @@ body {
     line-height: 1.6;
 }
 
-/* ── LEFT SIDE (REGISTER) ───────────────────────────────────── */
+/* ── LEFT SIDE (REGISTER)  */
 .signup-left {
     flex: 1;
     background: #0b3c68;
@@ -67,7 +67,7 @@ body {
     line-height: 1.6;
 }
 
-/* ── BADGE ──────────────────────────────────────────────────── */
+/* ── BADGE  */
 .badge {
     background: #ff7a00;
     padding: 6px 14px;
@@ -78,7 +78,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* ── HEADINGS ───────────────────────────────────────────────── */
+/* ── HEADINGS */
 h1 {
     font-size: 38px;
     margin-top: 20px;
@@ -91,7 +91,7 @@ h2 {
     margin-bottom: 4px;
 }
 
-/* ── FEATURE CARDS ──────────────────────────────────────────── */
+/* ── FEATURE CARDS  */
 .feature-card,
 .feature-box {
     display: flex;
@@ -123,7 +123,7 @@ h2 {
     opacity: 0.85;
 }
 
-/* ── ICON BOX ───────────────────────────────────────────────── */
+/* ── ICON BOX  */
 .icon-box {
     width: 42px;
     height: 42px;
@@ -138,7 +138,7 @@ h2 {
 .icon-box.blue  { background: linear-gradient(135deg, #4FC3F7, #0288D1); color: white; }
 .icon-box.green { background: linear-gradient(135deg, #7CFC00, #2E7D32); color: white; }
 
-/* ── RIGHT SIDE ─────────────────────────────────────────────── */
+/* ── RIGHT SIDE  */
 .auth-right {
     flex: 1;
     background: #f5f7fa;
@@ -149,7 +149,7 @@ h2 {
     padding: 30px 0;
 }
 
-/* ── FORM BOX ───────────────────────────────────────────────── */
+/* ── FORM BOX */
 .form-box {
     background: white;
     padding: 45px;
@@ -170,7 +170,7 @@ h2 {
     font-size: 14px;
 }
 
-/* ── LABELS ─────────────────────────────────────────────────── */
+/* ── LABELS */
 label {
     font-size: 14px;
     font-weight: 500;
@@ -179,7 +179,7 @@ label {
     color: #333;
 }
 
-/* ── STANDALONE INPUTS ──────────────────────────────────────── */
+/* ── STANDALONE INPUTS  */
 input[type="text"],
 input[type="email"] {
     width: 100%;
@@ -199,7 +199,7 @@ input[type="email"]:focus {
     box-shadow: 0 0 0 2px rgba(11,60,104,0.12);
 }
 
-/* ── SELECT ─────────────────────────────────────────────────── */
+/* ── SELECT  */
 .select-input {
     width: 100%;
     padding: 12px 14px;
@@ -220,7 +220,7 @@ input[type="email"]:focus {
     box-shadow: 0 0 0 2px rgba(11,60,104,0.12);
 }
 
-/* ── INPUT GROUP (password with eye) ────────────────────────── */
+/* ── INPUT GROUP  */
 .input-group {
     display: flex;
     align-items: center;
@@ -272,7 +272,7 @@ input[type="email"]:focus {
 
 .eye:hover { color: #0b3c68; }
 
-/* ── PASSWORD HINTS ─────────────────────────────────────────── */
+/* ── PASSWORD HINTS */
 .password-hint {
     background: #f0f4ff;
     border: 1px solid #d0d9f0;
@@ -302,13 +302,13 @@ input[type="email"]:focus {
 .hint-pass { color: #27ae60 !important; }
 .hint-fail { color: #e74c3c !important; }
 
-/* ── GRID ───────────────────────────────────────────────────── */
+/* ── GRID */
 .grid {
     display: flex;
     gap: 12px;
 }
 
-/* ── ROW ────────────────────────────────────────────────────── */
+/* ── ROW  */
 .row {
     display: flex;
     justify-content: space-between;
@@ -317,7 +317,7 @@ input[type="email"]:focus {
     align-items: center;
 }
 
-/* ── BUTTON ─────────────────────────────────────────────────── */
+/* ── BUTTON  */
 .btn-main {
     margin-top: 22px;
     width: 100%;
@@ -338,7 +338,7 @@ input[type="email"]:focus {
     box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 
-/* ── MESSAGES ───────────────────────────────────────────────── */
+/* ── MESSAGES */
 .msg {
     padding: 10px 14px;
     border-radius: 8px;
@@ -370,7 +370,7 @@ input[type="email"]:focus {
     font-size: 14px;
 }
 
-/* ── LINKS ──────────────────────────────────────────────────── */
+/* ── LINKS  */
 .link {
     color: #0b3c68;
     font-weight: 600;
@@ -380,7 +380,7 @@ input[type="email"]:focus {
 
 .link:hover { text-decoration: underline; }
 
-/* ── BOTTOM TEXT ────────────────────────────────────────────── */
+/* ── BOTTOM TEXT*/
 .bottom-text {
     text-align: center;
     margin-top: 18px;
@@ -388,7 +388,7 @@ input[type="email"]:focus {
     color: #666;
 }
 
-/* ── RESPONSIVE ─────────────────────────────────────────────── */
+/* ── RESPONSIVE */
 @media (max-width: 1024px) {
     .auth-container { flex-direction: column; }
     .auth-left, .auth-right, .signup-left { width: 100%; height: auto; }
@@ -404,7 +404,7 @@ input[type="email"]:focus {
     .row { flex-direction: column; gap: 10px; }
 }
 
-/* ── STEP INDICATOR ─────────────────────────────────────────── */
+/* ── STEP INDICATOR */
 .step-indicator {
     display: flex;
     flex-direction: row;
@@ -467,7 +467,7 @@ input[type="email"]:focus {
     margin-bottom: 18px;
 }
 
-/* ── STEP 2 BUTTONS ─────────────────────────────────────────── */
+/* ── STEP 2 BUTTONS  */
 .step2-buttons {
     display: flex;
     gap: 12px;
@@ -496,7 +496,193 @@ input[type="email"]:focus {
     margin-top: 0;
 }
 
-/* ── STEP INDICATOR (HIDDEN) ────────────────────────────────── */
+/* ── STEP INDICATOR (HIDDEN)  */
 .step-indicator {
     display: none;
+}
+
+
+/* Left Panel - Reduced Size */
+.signup-left {
+    flex: 1;
+    background: #0b3c68;
+    color: white;
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup-left-content {
+    max-width: 380px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.signup-left .badge {
+    background: #ff7a00;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    display: inline-block;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.signup-left h1 {
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.signup-left p {
+    margin-top: 0;
+    margin-bottom: 24px;
+    opacity: 0.85;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Feature Box Styles */
+.feature-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.25s ease;
+}
+
+.feature-box:hover {
+    transform: translateX(6px);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.feature-box h4 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.feature-box p {
+    margin: 3px 0 0;
+    font-size: 11px;
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+
+/* Icon Box */
+.icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.icon-box.blue {
+    background: linear-gradient(135deg, #4FC3F7, #0288D1);
+    color: white;
+}
+
+.icon-box.green {
+    background: linear-gradient(135deg, #7CFC00, #2E7D32);
+    color: white;
+}
+
+/* Container Adjustment for Fixed Nav Bar */
+.auth-container {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 58px;
+}
+
+.signup-left, .auth-right {
+    height: calc(100vh - 58px);
+    overflow-y: auto;
+}
+
+/* Navigation Bar Styles (matching student pages) */
+.admin-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 58px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    z-index: 200;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.admin-nav-logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #0b3c68, #1b5a8c);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: -0.3px;
+}
+
+.admin-btn-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0b3c68;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(11, 60, 104, 0.2);
+}
+
+.admin-btn-home:hover {
+    background: #0f4b7a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(11, 60, 104, 0.25);
+}
+
+/* Step 2 Buttons Layout */
+.step2-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.btn-back {
+    flex: 1;
+    padding: 13px;
+    background: white;
+    color: #0b3c68;
+    border: 2px solid #0b3c68;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-back:hover {
+    background: #f0f4ff;
+}
+
+.step2-buttons .btn-main {
+    flex: 2;
+    margin-top: 0;
 }

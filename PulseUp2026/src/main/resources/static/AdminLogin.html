@@ -10,6 +10,14 @@
 
 <div class="auth-container">
 
+    <!-- Navigation Bar  -->
+    <nav class="admin-nav">
+        <span class="admin-nav-logo">PulseUp</span>
+        <a href="index.html" class="admin-btn-home" id="homeNavBtn">
+            <i class="fa fa-house"></i> Back to Home
+        </a>
+    </nav>
+
     <!-- LEFT SIDE -->
     <div class="auth-left">
         <div class="left-content">
@@ -47,7 +55,7 @@
             <h2>Staff Member Sign In</h2>
             <p class="subtext">Welcome back! Please sign in to continue.</p>
 
-            <div id="error"   class="msg error"   style="display:none;"></div>
+            <div id="error" class="msg error" style="display:none;"></div>
             <div id="success" class="msg success" style="display:none;"></div>
 
             <form id="adminLoginForm">
@@ -87,5 +95,18 @@
 </div>
 
 <script src="js/auth/adminLogin.js"></script>
+<script>
+    // Home button navigation (same as student pages)
+    document.addEventListener("DOMContentLoaded", function() {
+        var homeBtn = document.getElementById("homeNavBtn");
+        if (homeBtn) {
+            homeBtn.addEventListener("click", function(e) {
+                e.preventDefault();
+                window.location.href = "index.html";
+            });
+        }
+    });
+</script>
+
 </body>
 </html>

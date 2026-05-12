@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var step1 = document.getElementById("step1");
     var step2 = document.getElementById("step2");
 
-    // ── Eye toggle ────────────────────────────────────────────
+    // ── Eye toggle
     document.querySelectorAll(".eye").forEach(function (span) {
         span.addEventListener("click", function () {
             var input = document.getElementById(span.getAttribute("data-target"));
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // ── Live password hints ───────────────────────────────────
+    // ── Live password hints
     passwordInput.addEventListener("focus", function () {
         passwordHint.style.display = "block";
     });
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // ── Next button (Step 1 → Step 2) ────────────────────────
+    // ── Next button (Step 1 → Step 2)
     document.getElementById("nextBtn").addEventListener("click", function () {
 
         var fullName    = document.getElementById("fullName").value.trim();
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("stepDot2").classList.add("active");
     });
 
-    // ── Back button (Step 2 → Step 1) ────────────────────────
+    // ── Back button (Step 2 → Step 1)
     document.getElementById("backBtn").addEventListener("click", function () {
         step2.style.display = "none";
         step1.style.display = "block";
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("stepDot1").classList.add("active");
     });
 
-    // ── Submit (Step 2) ───────────────────────────────────────
+    // ── Submit (Step 2)
     document.getElementById("submitBtn").addEventListener("click", function () {
 
         var password        = passwordInput.value;
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 2000);
     });
 
-    // ── Helper ────────────────────────────────────────────────
+    // ── Helper
     function showError(msg) {
         errorBox.innerHTML     = "<i class='fa fa-circle-exclamation'></i> " + msg;
         errorBox.style.display = "block";

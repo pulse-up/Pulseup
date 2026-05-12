@@ -10,40 +10,45 @@
 
 <div class="auth-container">
 
-    <!-- LEFT SIDE -->
+    <!-- Navigation Bar with Home Button  -->
+    <nav class="admin-nav">
+        <span class="admin-nav-logo">PulseUp</span>
+        <a href="index.html" class="admin-btn-home" id="homeNavBtn">
+            <i class="fa fa-house"></i> Back to Home
+        </a>
+    </nav>
+
+    <!-- LEFT SIDE -  -->
     <div class="signup-left">
+        <div class="signup-left-content">
+            <span class="badge">STAFF PORTAL</span>
+            <h1>Join Your Campus<br>PulseUp.</h1>
+            <p>Access clinical precision and real-time health services designed exclusively for CPUT staff.</p>
 
-        <span class="badge">STAFF PORTAL</span>
+            <div class="feature-box">
+                <div class="icon-box green"><i class="fa fa-calendar-check"></i></div>
+                <div>
+                    <h4>Real-time Booking</h4>
+                    <p>Secure your clinic visit in seconds</p>
+                </div>
+            </div>
 
-        <h1>Join Your Campus PulseUp.</h1>
+            <div class="feature-box">
+                <div class="icon-box blue"><i class="fa fa-file-medical"></i></div>
+                <div>
+                    <h4>Digital Health Records</h4>
+                    <p>Access your full medical history</p>
+                </div>
+            </div>
 
-        <p>Access clinical precision and real-time health services designed
-            exclusively for CPUT staff.</p>
-
-        <div class="feature-box">
-            <div class="icon-box green"><i class="fa fa-calendar-check"></i></div>
-            <div>
-                <h4>Real-time Booking</h4>
-                <p>Secure your clinic visit in seconds</p>
+            <div class="feature-box">
+                <div class="icon-box green"><i class="fa fa-heart"></i></div>
+                <div>
+                    <h4>Health Points</h4>
+                    <p>Earn rewards for wellness checkups</p>
+                </div>
             </div>
         </div>
-
-        <div class="feature-box">
-            <div class="icon-box blue"><i class="fa fa-file-medical"></i></div>
-            <div>
-                <h4>Digital Health Records</h4>
-                <p>Access your full medical history</p>
-            </div>
-        </div>
-
-        <div class="feature-box">
-            <div class="icon-box green"><i class="fa fa-heart"></i></div>
-            <div>
-                <h4>Health Points</h4>
-                <p>Earn rewards for wellness checkups</p>
-            </div>
-        </div>
-
     </div>
 
     <!-- RIGHT SIDE -->
@@ -135,5 +140,18 @@
 </div>
 
 <script src="js/auth/adminRegister.js"></script>
+<script>
+    // Home button navigation
+    document.addEventListener("DOMContentLoaded", function() {
+        var homeBtn = document.getElementById("homeNavBtn");
+        if (homeBtn) {
+            homeBtn.addEventListener("click", function(e) {
+                e.preventDefault();
+                window.location.href = "index.html";
+            });
+        }
+    });
+</script>
+
 </body>
 </html>
