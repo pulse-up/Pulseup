@@ -15,7 +15,6 @@ body {
     color: var(--text-dark);
 }
 
-/* NAVBAR */
 .navbar {
     background-color: white !important;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -25,7 +24,6 @@ body {
     color: var(--primary-blue);
 }
 
-/* SIDEBAR */
 aside {
     background-color: white;
 }
@@ -45,7 +43,6 @@ aside {
     color: white !important;
 }
 
-/* CARDS */
 .card {
     border: none;
     border-radius: 18px;
@@ -56,7 +53,6 @@ aside {
     box-shadow: 0 6px 18px rgba(0,0,0,0.05) !important;
 }
 
-/* BUTTONS */
 .btn-primary {
     background-color: var(--primary-blue);
     border: none;
@@ -67,7 +63,6 @@ aside {
     background-color: var(--secondary-blue);
 }
 
-/* INPUTS */
 .form-control,
 .form-select {
     border-radius: 10px;
@@ -80,7 +75,6 @@ aside {
     box-shadow: 0 0 0 0.2rem rgba(11, 60, 102, 0.1);
 }
 
-/* BADGES */
 .badge.bg-success {
     background-color: var(--success-green) !important;
 }
@@ -93,12 +87,10 @@ aside {
     background-color: #6c757d !important;
 }
 
-/* TABLE */
 .table thead {
     background-color: #f8fafc;
 }
 
-/* LINKS */
 a {
     color: var(--primary-blue);
 }
@@ -107,8 +99,41 @@ a:hover {
     color: var(--secondary-blue);
 }
 
-/* FOOTER */
 footer {
     background-color: white;
     border-top: 1px solid var(--border-light);
+}
+.table td,
+.table th {
+    vertical-align: middle;
+    padding: 16px;
+}
+
+.notification-container {
+    position: relative;
+}
+
+.notification-box {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 280px;
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.notification-item {
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.notification-item:hover {
+    background: #edf5fc;
 }

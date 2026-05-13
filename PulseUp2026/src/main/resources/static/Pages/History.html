@@ -115,25 +115,127 @@
 
                         <tbody>
 
-                        <tr th:each="item : ${history}">
-                            <td>
-                    <strong th:text="${item.type}">General Consultation</strong><br>
-                                <small class="text-muted" th:text="${item.category}">Health Clearance</small>
-                            </td>
-
-                            <td th:text="${item.doctor}">Dr. van der Merwe</td>
-
-                            <td th:text="${item.date}">Feb 24, 2026</td>
+                        <tr>
 
                             <td>
-                                <span class="badge bg-success" th:if="${item.status == 'Attended'}">Attended</span>
-                                <span class="badge bg-danger" th:if="${item.status == 'Cancelled'}">Cancelled</span>
-                                <span class="badge bg-secondary" th:if="${item.status == 'No-show'}">No-show</span>
+                                <strong>General Consultation</strong><br>
+                                <small class="text-muted">
+                                    Health Clearance
+                                </small>
                             </td>
 
                             <td>
-                                <a href="#" class="text-decoration-none">View</a>
+                                Dr. van der Merwe
                             </td>
+
+                            <td>
+                                Feb 24, 2026
+                            </td>
+
+                            <td>
+        <span class="badge bg-success">
+            Attended
+        </span>
+                            </td>
+
+                            <td class="text-end">
+
+                                <button class="btn btn-sm btn-outline-primary view-btn"
+
+                                        data-type="General Consultation"
+                                        data-category="Health Clearance"
+                                        data-doctor="Dr. van der Merwe"
+                                        data-date="Feb 24, 2026"
+                                        data-status="Attended"
+                                        data-notes="Patient attended consultation successfully and was medically cleared.">
+
+                                    View
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                <strong>Dental Check-up</strong><br>
+                                <small class="text-muted">
+                                    Dental Unit
+                                </small>
+                            </td>
+
+                            <td>
+                                Dr. Jacobs
+                            </td>
+
+                            <td>
+                                Mar 02, 2026
+                            </td>
+
+                            <td>
+                    <span class="badge bg-danger">
+                        Cancelled
+                    </span>
+                            </td>
+
+                            <td class="text-end">
+
+                                <button class="btn btn-sm btn-outline-primary view-btn"
+
+                                        data-type="Dental Check-up"
+                                        data-category="Dental Unit"
+                                        data-doctor="Dr. Jacobs"
+                                        data-date="Mar 02, 2026"
+                                        data-status="Cancelled"
+                                        data-notes="Appointment cancelled due to patient unavailability.">
+
+                                    View
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                <strong>Eye Examination</strong><br>
+                                <small class="text-muted">
+                                    Vision Screening
+                                </small>
+                            </td>
+
+                            <td>
+                                Dr. Daniels
+                            </td>
+
+                            <td>
+                                Apr 11, 2026
+                            </td>
+
+                            <td>
+                    <span class="badge bg-secondary">
+                        No-show
+                    </span>
+                            </td>
+
+                            <td class="text-end">
+
+                                <button class="btn btn-sm btn-outline-primary view-btn"
+
+                                        data-type="Eye Examination"
+                                        data-category="Vision Screening"
+                                        data-doctor="Dr. Daniels"
+                                        data-date="Apr 11, 2026"
+                                        data-status="No-show"
+                                        data-notes="Patient did not arrive for scheduled consultation.">
+
+                                    View
+                                </button>
+
+                            </td>
+
                         </tr>
 
                         </tbody>
@@ -152,7 +254,116 @@
     © 2026 PulseUp Clinical System
 </footer>
 
+<div class="modal fade" id="viewHistoryModal" tabindex="-1">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content" style="border-radius:16px;">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title fw-bold">
+                    Consultation Details
+                </h5>
+
+                <button class="btn-close"
+                        data-bs-dismiss="modal"></button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">
+                            Consultation Type
+                        </label>
+
+                        <input type="text"
+                               id="modalType"
+                               class="form-control"
+                               readonly>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">
+                            Category
+                        </label>
+
+                        <input type="text"
+                               id="modalCategory"
+                               class="form-control"
+                               readonly>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">
+                            Doctor / Clinic
+                        </label>
+
+                        <input type="text"
+                               id="modalDoctor"
+                               class="form-control"
+                               readonly>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">
+                            Consultation Date
+                        </label>
+
+                        <input type="text"
+                               id="modalDate"
+                               class="form-control"
+                               readonly>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">
+                            Status
+                        </label>
+
+                        <input type="text"
+                               id="modalStatus"
+                               class="form-control"
+                               readonly>
+                    </div>
+
+                    <div class="col-12">
+
+                        <label class="form-label fw-bold">
+                            Notes
+                        </label>
+
+                        <textarea id="modalNotes"
+                                  class="form-control"
+                                  rows="4"
+                                  readonly></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="JS/history.js"></script>
 
 </body>
 </html>
