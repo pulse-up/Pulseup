@@ -94,7 +94,6 @@ aside {
     background-color: #ffffff;
 }
 
-
 .navbar {
     background-color: #ffffff;
 }
@@ -135,9 +134,36 @@ aside {
 .btn-primary:hover {
     background-color: #0b5ed7;
 }
-
 .nav-link.active {
     background-color: #0d6efd;
     color: white !important;
     border-radius: 8px;
+}
+.notification-box {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    width: 260px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    padding: 12px;
+    z-index: 999;
+    display: none;
+}
+
+.notification-item {
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.notification-item:hover {
+    background: #f1f5f9;
+    cursor: pointer;
+}
+.table td,
+.table th {
+    vertical-align: middle;
+    padding: 16px;
 }

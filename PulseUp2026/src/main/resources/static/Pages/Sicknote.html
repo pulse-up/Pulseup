@@ -29,15 +29,17 @@
                 <a href="Settings.html" class="text-dark">
                     <i class="bi bi-gear"></i>
                 </a>
-                <div class="notification-container position-relative">
+                <div class="notification-container position-relative" id="notificationWrapper">
 
                     <i id="bellIcon" class="bi bi-bell fs-5" style="cursor:pointer;"></i>
+
                     <span id="notifCounting"
                           class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         3
                     </span>
 
-                    <div id="notificationBox" class="notification-box d-none">
+                    <div id="notificationBox" class="notification-box">
+
                         <p class="fw-bold mb-2">Notifications</p>
 
                         <div class="notification-item">
@@ -51,6 +53,7 @@
                         <div class="notification-item">
                             Health questionnaire submitted
                         </div>
+
                     </div>
 
                 </div>
@@ -142,18 +145,61 @@
 
                         <tr>
                             <td>John Doe</td>
-                            <td>Flu & Fever</td>
-                            <td>3 Days</td>
-                            <td><span class="badge bg-success">Approved</span></td>
-                            <td><button class="btn btn-sm btn-outline-primary">View</button></td>
-                        </tr>
 
+                            <td>Flu & Fever</td>
+
+                            <td>3 Days</td>
+
+                            <td>
+                    <span class="badge bg-success">
+                        Approved
+                    </span>
+                            </td>
+
+                            <td class="text-end">
+
+                                <button class="btn btn-sm btn-outline-primary view-btn"
+
+                                        data-patient="John Doe"
+                                        data-reason="Flu & Fever"
+                                        data-duration="3 Days"
+                                        data-status="Approved"
+                                        data-notes="Patient diagnosed with flu symptoms and advised bed rest for 3 days.">
+
+                                    View
+                                </button>
+
+                            </td>
+
+                        </tr>
                         <tr>
                             <td>Sarah Smith</td>
+
                             <td>Back Pain</td>
+
                             <td>5 Days</td>
-                            <td><span class="badge bg-warning text-dark">Pending</span></td>
-                            <td><button class="btn btn-sm btn-outline-primary">View</button></td>
+
+                            <td>
+                    <span class="badge bg-warning text-dark">
+                        Pending
+                    </span>
+                            </td>
+
+                            <td class="text-end">
+
+                                <button class="btn btn-sm btn-outline-primary view-btn"
+
+                                        data-patient="Sarah Smith"
+                                        data-reason="Back Pain"
+                                        data-duration="5 Days"
+                                        data-status="Pending"
+                                        data-notes="Patient experiencing lower back pain and requires physiotherapy assessment.">
+
+                                    View
+                                </button>
+
+                            </td>
+
                         </tr>
 
                         </tbody>
@@ -219,8 +265,103 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="viewSickNoteModal" tabindex="-1">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content" style="border-radius:16px;">
+
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">
+                    Sick Note Information
+                </h5>
+
+                <button class="btn-close"
+                        data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">
+                            Patient Name
+                        </label>
+
+                        <input type="text"
+                               id="modalPatient"
+                               class="form-control"
+                               readonly>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">
+                            Sick Note Status
+                        </label>
+
+                        <input type="text"
+                               id="modalStatus"
+                               class="form-control"
+                               readonly>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">
+                            Medical Reason
+                        </label>
+
+                        <input type="text"
+                               id="modalReason"
+                               class="form-control"
+                               readonly>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">
+                            Recovery Duration
+                        </label>
+
+                        <input type="text"
+                               id="modalDuration"
+                               class="form-control"
+                               readonly>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label fw-bold">
+                            Doctor Notes
+                        </label>
+
+                        <textarea id="modalNotes"
+                                  class="form-control"
+                                  rows="4"
+                                  readonly>
+Patient requires rest and medication.
+                        </textarea>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="JS/sicknote.js"></script>
 
 </body>
 </html>
