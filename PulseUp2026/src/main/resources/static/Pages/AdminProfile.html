@@ -28,7 +28,31 @@
 
             <div class="d-flex align-items-center gap-3">
                 <a href="Settings.html" class="text-dark"><i class="bi bi-gear"></i></a>
-                <i class="bi bi-bell"></i>
+                <div class="notification-container position-relative">
+
+                    <i id="bellIcon" class="bi bi-bell fs-5" style="cursor:pointer;"></i>
+                    <span id="notifCounting"
+                          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        3
+                    </span>
+
+                    <div id="notificationBox" class="notification-box d-none">
+                        <p class="fw-bold mb-2">Notifications</p>
+
+                        <div class="notification-item">
+                            New appointment booked
+                        </div>
+
+                        <div class="notification-item">
+                            Sick note updated
+                        </div>
+
+                        <div class="notification-item">
+                            Health questionnaire submitted
+                        </div>
+                    </div>
+
+                </div>
                 <img alt="Admin Image" src="#" class="rounded-circle" style="height: 70px;">
             </div>
 
@@ -69,8 +93,9 @@
                 </div>
 
                 <div>
-                    <button class="btn btn-light btn-sm me-2">Message</button>
-                    <button class="btn btn-outline-light btn-sm">Edit Profile</button>
+                    <button id="editProfileBtn" class="btn btn-light btn-sm me-2">
+                        Edit Profile
+                    </button>
                 </div>
 
             </div>
@@ -79,7 +104,7 @@
 
                 <div class="col-lg-8">
 
-                    <<div class="card personal shadow-sm p-4 mb-4">
+                    <div class="card personal shadow-sm p-4 mb-4">
                     <h6 class="mb-3">
                         <i class="bi bi-person icon-blue panel-icon"></i>
                         Personal Information
@@ -175,11 +200,56 @@
             </div>
 
         </section>
+        <!-- EDIT PROFILE MODAL -->
+
+        <div id="editModal" class="custom-modal d-none">
+
+            <div class="custom-modal-content">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4>Edit Profile</h4>
+
+                    <button id="closeModal" class="btn btn-danger btn-sm">
+                        X
+                    </button>
+                </div>
+
+                <form id="editForm">
+
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" value="Dr Inga Plati">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Phone</label>
+                        <input type="text" class="form-control" value="071 234 5678">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" value="inga@email.com">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Address</label>
+                        <input type="text" class="form-control" value="Cape Town">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Save Changes
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
 
     </div>
 </main>
 
+<script src="JS/Profile.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

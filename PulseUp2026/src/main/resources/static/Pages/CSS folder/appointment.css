@@ -18,7 +18,7 @@ body {
 }
 
 .navbar {
-    background-color: blue !important;
+    background-color: white !important;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
@@ -187,4 +187,26 @@ footer {
 .section-title {
     font-weight: 600;
     color: var(--text-dark);
+}
+.notification-box {
+    position: absolute;
+    right: 0;
+    top: 35px;
+    width: 260px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    padding: 12px;
+    z-index: 999;
+}
+
+.notification-item {
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.notification-item:hover {
+    background: #f1f5f9;
+    cursor: pointer;
 }

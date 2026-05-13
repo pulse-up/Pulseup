@@ -13,8 +13,8 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="CSS folder/appointments.css">
+    <link rel="stylesheet" href="../CSS folder/main.css">
+    <link rel="stylesheet" href="CSS folder/appointment.css">
 
 </head>
 
@@ -30,10 +30,26 @@
             </a>
             <div class="d-flex align-items-center gap-3">
                 <input class="form-control rounded-pill" type="search" placeholder="Search appointments..." style="width: 250px;">
-                <a href="settings.html" class="text-dark">
+                <a href="Settings.html" class="text-dark">
                     <i class="bi bi-gear"></i>
                 </a>
-                <i class="bi bi-bell"></i>
+                <div class="notification-container position-relative">
+                    <i id="bellIcon" class="bi bi-bell fs-5" style="cursor:pointer;"></i>
+
+                    <span id="notifCounting"
+                          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        3
+                    </span>
+
+                    <div id="notificationBox" class="notification-box d-none">
+                        <p class="fw-bold mb-2">Notifications</p>
+
+                        <div class="notification-item">New appointment booked</div>
+                        <div class="notification-item">Sick note updated</div>
+                        <div class="notification-item">Health questionnaire submitted</div>
+                    </div>
+
+                </div>
                 <img src="#" class="rounded-circle" style="height: 50px;" alt="bi-bell icon">
 
             </div>
@@ -49,7 +65,7 @@
 
             <ul class="nav flex-column gap-2">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="Profile.html">Profile</a>
+                    <a class="nav-link text-dark" href="AdminProfile.html">Profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active bg-primary text-white rounded" href="#">Bookings</a>
@@ -123,7 +139,9 @@
                             <i class="bi bi-calendar-check icon-green panel-icon"></i>
                             Active Appointments
                         </h5>
-                        <a href="#" class="text-decoration-none">View All →</a>
+                        <a href="#" id="viewAllAppointments" class="text-decoration-none">
+                            View All →
+                        </a>
                     </div>
 
                     <div class="card appointments mb-3 shadow-sm p-3" th:each="appt : ${appointments}">
@@ -143,8 +161,15 @@
                             </div>
 
                             <div>
-                                <button class="btn btn-sm btn-primary me-2">Attend</button>
-                                <button class="btn btn-sm btn-outline-danger">Reschedule</button>
+                                <button class="btn btn-sm btn-primary me-2 attend-btn"
+                                        th:attr="data-id=${appt.id}">
+                                    Attend
+                                </button>
+
+                                <button class="btn btn-sm btn-outline-danger reschedule-btn"
+                                        th:attr="data-id=${appt.id}">
+                                    Reschedule
+                                </button>
                             </div>
 
                         </div>
@@ -195,7 +220,11 @@
                                 </td>
 
                                 <td>
-                                    <a href="#" class="text-decoration-none">Details</a>
+                                    <a href="#" class="text-decoration-none details-link"
+                                       th:attr="data-id=${past.id}">
+                                        Details
+                                    </a>
+
                                 </td>
 
                             </tr>
@@ -212,7 +241,7 @@
 
     </div>
 </main>
-
+<script src="JS/appointments.js"></script>
 <footer class="text-center py-3 text-muted small">
     © 2026 CPUT Health Services • PulseUp Clinical Solutions
 </footer>

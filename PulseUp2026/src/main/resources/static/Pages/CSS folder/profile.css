@@ -14,7 +14,6 @@ body {
     color: var(--text-dark);
 }
 
-/* NAVBAR */
 .navbar {
     background-color: white !important;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -24,7 +23,6 @@ body {
     color: var(--primary-blue);
 }
 
-/* SIDEBAR */
 aside {
     background-color: white;
 }
@@ -44,7 +42,6 @@ aside {
     color: white !important;
 }
 
-/* PROFILE HEADER */
 .profile-header {
     background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
     color: white;
@@ -52,7 +49,6 @@ aside {
     padding: 8px;
 }
 
-/* CARDS */
 .card {
     border: none;
     border-radius: 18px;
@@ -63,7 +59,6 @@ aside {
     box-shadow: 0 6px 18px rgba(0,0,0,0.05) !important;
 }
 
-/* BUTTONS */
 .btn-primary {
     background-color: var(--primary-blue);
     border: none;
@@ -84,7 +79,6 @@ aside {
     color: white;
 }
 
-/* TAGS */
 .status-badge {
     background-color: var(--success-green);
     padding: 4px 10px;
@@ -92,12 +86,11 @@ aside {
     font-size: 12px;
 }
 
-/* SMALL LABELS */
 .label {
     font-size: 12px;
     color: var(--text-muted);
 }
-/* PANEL COLOR ACCENTS */
+
 .card.personal {
     border-top: 4px solid #0b3c66;
 }
@@ -114,18 +107,71 @@ aside {
     border-top: 4px solid #ff9f43;
 }
 
-/* OPTIONAL: subtle header tint */
 .card h6 {
     font-weight: 600;
     color: #1f2d3d;
 }
 
-/* OPTIONAL: icon badges for panels */
 .panel-icon {
     font-size: 18px;
     padding: 8px;
     border-radius: 10px;
     margin-right: 8px;
+}
+
+
+.custom-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.custom-modal-content {
+    background: white;
+    padding: 30px;
+    width: 400px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+
+.d-none {
+    display: none !important;
+}
+
+
+.notification-box {
+    position: absolute;
+    top: 40px;
+    right: 0;
+
+    width: 260px;
+
+    background: white;
+    border-radius: 12px;
+
+    padding: 15px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+    z-index: 999;
+}
+
+.notification-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
 }
 
 .icon-blue { background: rgba(11,60,102,0.1); color: #0b3c66; }

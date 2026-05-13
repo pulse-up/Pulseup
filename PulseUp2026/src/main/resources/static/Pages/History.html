@@ -28,7 +28,31 @@
                 <a href="Settings.html" class="text-dark">
                     <i class="bi bi-gear"></i>
                 </a>
-                <i class="bi bi-bell"></i>
+                <div class="notification-container position-relative">
+
+                    <i id="bellIcon" class="bi bi-bell fs-5" style="cursor:pointer;"></i>
+                    <span id="notifCounting"
+                          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        3
+                    </span>
+
+                    <div id="notificationBox" class="notification-box d-none">
+                        <p class="fw-bold mb-2">Notifications</p>
+
+                        <div class="notification-item">
+                            New appointment booked
+                        </div>
+
+                        <div class="notification-item">
+                            Sick note updated
+                        </div>
+
+                        <div class="notification-item">
+                            Health questionnaire submitted
+                        </div>
+                    </div>
+
+                </div>
                 <img alt="Admin Image" src="#" class="rounded-circle" style="height: 40px;">
             </div>
 

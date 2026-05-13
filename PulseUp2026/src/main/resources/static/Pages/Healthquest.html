@@ -28,7 +28,27 @@
                 <a href="Settings.html" class="text-dark">
                     <i class="bi bi-gear"></i>
                 </a>
-                <i class="bi bi-bell"></i>
+
+                <div class="notification-container position-relative" id="notificationWrapper">
+
+                    <i id="bellIcon" class="bi bi-bell fs-5" style="cursor:pointer;"></i>
+
+                    <span id="notifCounting"
+                          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        3
+                    </span>
+
+                    <div id="notificationBox" class="notification-box">
+
+                        <p class="fw-bold mb-2">Notifications</p>
+
+                        <div class="notification-item">New appointment booked</div>
+                        <div class="notification-item">Sick note updated</div>
+                        <div class="notification-item">Health questionnaire submitted</div>
+
+                    </div>
+
+                </div>
                 <img alt="Admin Pic" src="#" class="rounded-circle" style="height: 40px;">
             </div>
 
@@ -39,7 +59,6 @@
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Sidebar -->
         <aside class="col-md-2 border-end vh-100 p-3 position-relative">
             <ul class="nav flex-column gap-2">
                 <li><a class="nav-link text-dark" href="AdminProfile.html">Profile</a></li>
@@ -54,7 +73,6 @@
             </div>
         </aside>
 
-        <!-- MAIN -->
         <main class="col-md-10 p-4">
 
             <div class="d-flex justify-content-between align-items-center mb-4">
@@ -63,13 +81,11 @@
                     <small class="text-muted">Manage patient health questionnaires</small>
                 </div>
 
-                <!-- FIXED BUTTON -->
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createHealthquestModal">
                     + Create Healthquest
                 </button>
             </div>
 
-            <!-- STATS -->
             <div class="row g-3 mb-4">
 
                 <div class="col-md-4">
@@ -104,7 +120,6 @@
 
             </div>
 
-            <!-- TABLE -->
             <div class="card table-panel shadow-sm">
 
                 <div class="card-header bg-white">
@@ -166,7 +181,6 @@
     </div>
 </div>
 
-<!-- CREATE MODAL (THIS WAS MISSING → FIXES BUTTON) -->
 <div class="modal fade" id="createHealthquestModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -224,7 +238,6 @@
     </div>
 </div>
 
-<!-- VIEW MODAL -->
 <div class="modal fade" id="viewHealthquestModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content p-3">
@@ -235,6 +248,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="JS/healthquest.js"></script>
 
 </body>
 </html>
