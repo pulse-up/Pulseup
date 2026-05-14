@@ -58,7 +58,7 @@
                     </div>
 
                 </div>
-                <img src="20221223_103444.jpg" class="rounded-circle" style="height: 50px;" alt="bi-bell icon">
+                <img src="20221223_103444.jpg" class="rounded-circle" style="height: 70px; width:70px" alt="bi-bell icon">
 
             </div>
 
@@ -175,9 +175,11 @@
                                 </button>
 
                                 <button class="btn btn-sm btn-outline-danger reschedule-btn"
-                                        th:attr="data-id=${appt.id}">
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#rescheduleModal">
                                     Reschedule
                                 </button>
+
                             </div>
 
                         </div>
@@ -396,9 +398,136 @@
 </div>
 <script src="JS/main.js"></script>
 <script src="JS/appointments.js"></script>
+<!-- RESCHEDULE MODAL -->
+<div class="modal fade"
+     id="rescheduleModal"
+     tabindex="-1">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Reschedule Appointment
+                </h5>
+
+                <button class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <form id="rescheduleForm">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                Patient Name
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   value="John Doe">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                Appointment Type
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   value="Dental Check-up">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                New Date
+                            </label>
+
+                            <input type="date"
+                                   class="form-control"
+                                   required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                New Time
+                            </label>
+
+                            <input type="time"
+                                   class="form-control"
+                                   required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                Clinic Room
+                            </label>
+
+                            <select class="form-select">
+
+                                <option>Unit 1A</option>
+                                <option>Unit 1B</option>
+                                <option>Unit 2A</option>
+
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                Doctor
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   value="Dr Nyana">
+                        </div>
+
+                        <div class="col-12">
+
+                            <label class="form-label">
+                                Reschedule Reason
+                            </label>
+
+                            <textarea class="form-control"
+                                      rows="4"
+                                      placeholder="Enter reason..."></textarea>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Cancel
+                </button>
+
+                <button class="btn btn-primary"
+                        id="saveRescheduleBtn">
+                    Save Changes
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
 <footer class="text-center py-3 text-muted small">
     © 2026 CPUT Health Services • PulseUp Clinical Solutions
 </footer>
-
 </body>
 </html>
