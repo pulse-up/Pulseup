@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PulseUp - Sick Notes</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/Sicknote.css">
+</head>
+<body>
+<div class="sidebar">
+    <h4>PulseUp</h4>
+
+    <ul class="nav flex-column mt-4">
+        <li><a class="nav-link" href="dashboard.html"><i class="bi bi-grid"></i> Dashboard</a></li>
+        <li><a class="nav-link" href="bookings.html"><i class="bi bi-calendar"></i> Bookings</a></li>
+        <a class="nav-link" href="history.html"><i class="bi bi-clock"></i>History</a>
+        <li><a class="nav-link" href="healthquest.html"><i class="bi bi-heart"></i> Health Quests</a></li>
+        <li><a class="nav-link active" href="#"><i class="bi bi-file-text"></i> Sick Notes</a></li>
+    </ul>
+
+    <div class="mt-auto pt-5">
+        <button class="btn btn-outline-secondary w-100">Logout</button>
+    </div>
+</div>
+
+<div class="main">
+
+    <div class="topbar mb-4">
+        <div class="search-wrapper">
+            <i class="bi bi-search"></i>
+            <input type="text" class="form-control search-bar" placeholder="Search sick notes...">
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+
+            <div class="dropdown">
+
+                <i class="bi bi-bell fs-5 dropdown-toggle"
+                   id="notificationDropdown"
+                   data-bs-toggle="dropdown"
+                   style="cursor:pointer;"></i>
+
+                <ul class="dropdown-menu dropdown-menu-end p-2"
+                    style="width:300px;">
+
+                    <li>
+                        <h6 class="dropdown-header">
+                            Notifications
+                        </h6>
+                    </li>
+
+                    <li class="mb-2">
+                        <div class="small">
+                            <strong>Sick Note Approved</strong><br>
+                            Your flu request has been approved.
+                        </div>
+                    </li>
+
+                    <li><hr class="dropdown-divider"></li>
+
+                    <li class="mb-2">
+                        <div class="small">
+                            <strong>Pending Review</strong><br>
+                            Campus Clinic request is under review.
+                        </div>
+                    </li>
+
+                    <li><hr class="dropdown-divider"></li>
+
+                    <li class="mb-2">
+                        <div class="small">
+                            <strong>Reminder</strong><br>
+                            Download your approved sick note.
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <i class="bi bi-gear fs-5"
+               id="settingsIcon"
+               style="cursor:pointer;"></i>
+
+            <img src="PulseUp images/20221223_103444.jpg"
+                 class="rounded-circle"
+                 style="height:100px; width:100px;">
+
+        </div>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-lg-6">
+            <div class="card-box">
+                <h5>Request Sick Note</h5>
+
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Hospital / Clinic</label>
+                        <input type="text" class="form-control" placeholder="e.g. Groote Schuur Hospital">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Reason</label>
+                        <textarea class="form-control" rows="3" placeholder="Describe your condition..."></textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label class="form-label">From</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label class="form-label">To</label>
+                            <input type="date" class="form-control">
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary w-100 mt-3">Submit Request</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="quick-card">
+                <h5>Quick Request</h5>
+                <p>Request a sick note from your last consultation instantly</p>
+                <button class="btn btn-dark">Generate from Last Visit</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mt-5">
+        <h5>Your Sick Notes</h5>
+
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th>Clinic</th>
+                    <th>Reason</th>
+                    <th>Date Range</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Groote Schuur Hospital</td>
+                    <td>Flu & Fever</td>
+                    <td>Apr 10 - Apr 12</td>
+                    <td><span class="badge badge-approved">Approved</span></td>
+                    <td><a href="#">Download</a></td>
+                </tr>
+
+                <tr>
+                    <td>Campus Clinic</td>
+                    <td>Headache</td>
+                    <td>May 02</td>
+                    <td><span class="badge badge-pending">Pending</span></td>
+                    <td><a href="#">Track</a></td>
+                </tr>
+
+                <tr>
+                    <td>City Health Center</td>
+                    <td>Injury</td>
+                    <td>Mar 20 - Mar 22</td>
+                    <td><span class="badge badge-rejected">Rejected</span></td>
+                    <td><a href="#">Details</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="JS/Sicknote.js"></script>
+</body>
+</html>

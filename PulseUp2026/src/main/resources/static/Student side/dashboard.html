@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulseUp Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/Dashboard.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h4 class="mb-4">PulseUp</h4>
+
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link active" href="#"><i class="bi bi-grid"></i> Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="bookings.html"><i class="bi bi-calendar"></i> Bookings</a>
+        </li>
+        <a class="nav-link" href="history.html"><i class="bi bi-clock"></i>History</a>
+        <li class="nav-item">
+            <a class="nav-link" href="healthquest.html"><i class="bi bi-heart"></i> Health Quests</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="sicknote.html"><i class="bi bi-file-text"></i> Sick Notes</a>
+            
+        </li>
+    </ul>
+
+    <div class="mt-auto pt-5">
+        <button class="btn btn-outline-secondary w-100">Logout</button>
+    </div>
+</div>
+
+<div class="main">
+
+    <div class="topbar mb-4">
+        <div class="search-wrapper">
+            <i class="bi bi-search"></i>
+            <input type="text" class="form-control search-bar" placeholder="Search records...">
+        </div>
+            <!-- Bell and Gear Icon-->
+
+        <div class="d-flex align-items-center gap-3">
+            <div class="dropdown">
+
+                <i class="bi bi-bell fs-5 dropdown-toggle"
+                   id="notificationDropdown"
+                   data-bs-toggle="dropdown"
+                   style="cursor:pointer;"></i>
+
+                <ul class="dropdown-menu dropdown-menu-end p-2"
+                    style="width:300px;">
+
+                    <li>
+                        <h6 class="dropdown-header">Notifications</h6>
+                    </li>
+
+                    <li class="mb-2">
+                        <div class="small">
+                            <strong>Appointment Confirmed</strong><br>
+                            Your General Consultation is booked for 1 PM.
+                        </div>
+                    </li>
+
+                    <li><hr class="dropdown-divider"></li>
+
+                    <li class="mb-2">
+                        <div class="small">
+                            <strong>Quest Completed</strong><br>
+                            Daily hydration goal completed.
+                        </div>
+                    </li>
+
+                    <li><hr class="dropdown-divider"></li>
+
+                    <li class="mb-2">
+                        <div class="small">
+                            <strong>Prescription Ready</strong><br>
+                            Your medication is ready for collection.
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <i class="bi bi-gear fs-5" id="settingsIcon" style="cursor:pointer;"></i>
+            <div>
+                <img src="PulseUp images\20221223_103444.jpg" class="rounded-circle " style="width: 100px; height: 100px;">
+                <strong>Matinisa Lubisi</strong><br>
+                
+                <span class="small-text">Medical ID: 88201-P</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-lg-8">
+
+            <div class="card-dark mb-4">
+                <h4>Good morning, Matinisa.</h4>
+                <p>Your health metrics look stable today. You have one upcoming check-up at 2:00 PM.</p>
+
+                <div class="d-flex gap-3 mt-3">
+                    <div class="mini-card">
+                        <small>HEALTH STREAK</small>
+                        <h5>12 Days 🔥</h5>
+                    </div>
+                    <div class="mini-card">
+                        <small>NEXT MILESTONE</small>
+                        <h5>3 Quests</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between mb-2">
+                <h5>Book a Service</h5>
+                <a href="#" id="viewServices">View All Services →</a>
+            </div>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h6>General Medical</h6>
+                        <p class="small-text">Flu, checkups, minor injuries.</p>
+                        <span class="text-success small-text">Available now</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h6>Reproductive</h6>
+                        <p class="small-text">Counseling & prescriptions.</p>
+                        <span class="text-danger small-text">Wait time: 15 mins</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h6>HIV VCT</h6>
+                        <p class="small-text">Confidential testing & support.</p>
+                        <span class="text-success small-text">Available now</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <h6>Mental Health</h6>
+                        <p class="small-text">Stress & academic support.</p>
+                        <span class="small-text">Next: 11:30 AM</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voucher Section -->
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <img src="PulseUp images\20221223_103444.jpg" class="voucher-img">
+                </div>
+                <div class="col-md-6 bg-white p-3 rounded-end">
+                    <div class="d-flex justify-content-between">
+                        <h6>Food Voucher Progress</h6>
+                        <span class="badge-soft">Quest Active</span>
+                    </div>
+
+                    <p class="small-text">Current Tier: R80</p>
+
+                    <div class="progress mb-2">
+                        <div class="progress-bar" style="width:75%"></div>
+                    </div>
+
+                    <small>Complete 2 more "Wellness Check-ins" to unlock your R100 Cyngatha food voucher.</small>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+    <div class="right-card mb-4">
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="mb-0">New Appointment</h6>
+            <i class="bi bi-plus-circle text-primary"></i>
+        </div>
+
+        <p class="small-text">
+            Quickly book a consultation with campus health services.
+        </p>
+
+        <select class="form-select mb-2">
+            <option>Select Service</option>
+            <option>General Medical</option>
+            <option>Mental Health</option>
+            <option>HIV VCT</option>
+            <option>Reproductive Health</option>
+        </select>
+
+        <input type="date" class="form-control mb-2">
+        <input type="time" class="form-control mb-3">
+
+        <button class="btn btn-main w-100">
+            Book Appointment
+        </button>
+    </div>
+
+    <div class="right-card mb-4">
+        <h6>Sick Note Request</h6>
+        <p class="small-text">Need a request for a hospital or doctor?</p>
+
+        <input type="text" class="form-control mb-2" value="Groote Schuur Hospital">
+
+        <button class="btn btn-main w-100">Generate Request</button>
+    </div>
+
+    <div class="right-card">
+        <h6>Upcoming Activity</h6>
+
+        <div class="mt-3">
+            <strong>General Consultation</strong>
+            <p class="small-text">D6 Campus Health Center, 1pm</p>
+        </div>
+
+        <div class="mt-3">
+            <strong>Quest Completed</strong>
+            <p class="small-text">Daily hydration goal</p>
+        </div>
+
+        <div class="mt-3">
+            <strong>Prescription Refill</strong>
+            <p class="small-text">Ready for collection</p>
+        </div>
+
+        <a href="#" class="d-block mt-3">View Medical History</a>
+    </div>
+
+</div>
+
+    </div>
+    
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="JS/Dashboard.js"></script>
+</body>
+</html>

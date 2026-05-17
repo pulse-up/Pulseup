@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <title>Staff Profile</title>
+
+    <link rel="stylesheet" href="CSS folder/profile.css">
+    <link rel="stylesheet" href="CSS folder/main.css">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg border-bottom px-4">
+        <div class="container-fluid">
+
+            <a class="navbar-brand fw-bold" href="#">
+                <img alt="Logo image" src="Logo.jpeg" class="rounded-circle" style="height: 100px;">
+                <span>Profile</span>
+            </a>
+
+            <div class="d-flex align-items-center gap-3">
+                <div class="settings-container position-relative">
+
+                    <i id="settingsIcon"
+                       class="bi bi-gear fs-5"
+                       style="cursor:pointer;"></i>
+
+                </div>
+
+                <div class="notification-container position-relative">
+
+                    <i id="bellIcon" class="bi bi-bell fs-5" style="cursor:pointer;"></i>
+                    <span id="notifCounting"
+                          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        3
+                    </span>
+
+                    <div id="notificationBox" class="notification-box d-none">
+                        <p class="fw-bold mb-2">Notifications</p>
+
+                        <div class="notification-item">
+                            New appointment booked
+                        </div>
+
+                        <div class="notification-item">
+                            Sick note updated
+                        </div>
+
+                        <div class="notification-item">
+                            Health questionnaire submitted
+                        </div>
+                    </div>
+
+                </div>
+                <img alt="Admin Image" src="20221223_103444.jpg" class="rounded-circle" style="height: 70px; width:70px">
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+<main class="container-fluid">
+    <div class="row">
+
+        <aside class="col-md-2 border-end vh-100 p-3">
+
+            <ul class="nav flex-column gap-2">
+                <li><a class="nav-link active" href="#">Profile</a></li>
+                <li><a class="nav-link text-dark" href="Appointments.html">Bookings</a></li>
+                <li><a class="nav-link text-dark" href="Healthquest.html">Health quests</a></li>
+                <li><a class="nav-link text-dark" href="Sicknote.html">Sick Notes</a></li>
+                <li><a class="nav-link text-dark" href="History.html">History</a></li>
+            </ul>
+
+            <div class="position-absolute bottom-0 mb-4">
+                <a href="#" class="text-muted text-decoration-none">Logout</a>
+            </div>
+
+        </aside>
+
+        <section class="col-md-10 p-4">
+
+            <div class="profile-header d-flex justify-content-between align-items-center mb-4">
+
+                <div class="d-flex align-items-center gap-3">
+                    <img alt="Admin Image" src="20221223_103444.jpg" class="rounded-circle border border-3 border-white" style="height: 90px;">
+                    <div>
+                        <h4 class="mb-1">Dr Inga Plati</h4>
+                        <small class="status-badge">Active</small>
+                        <div class="mt-1 small">Clinic Doctor • Campus Health Services</div>
+                    </div>
+                </div>
+
+                <div>
+                    <button id="editProfileBtn" class="btn btn-light btn-sm me-2">
+                        Edit Profile
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-8">
+
+                    <div class="card personal shadow-sm p-4 mb-4">
+                    <h6 class="mb-3">
+                        <i class="bi bi-person icon-blue panel-icon"></i>
+                        Personal Information
+                    </h6>
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <div class="label">Full Name</div>
+                                <strong>Dr Inga Plati</strong>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="label">Staff Number</div>
+                                <strong>12345</strong>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="label">Phone</div>
+                                <strong>071 234 5678</strong>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="label">Email</div>
+                                <strong>inga@email.com</strong>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="label">Address</div>
+                                <strong>Cape Town</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card activity shadow-sm p-4">
+                        <h6 class="mb-3">
+                            <i class="bi bi-activity icon-green panel-icon"></i>
+                            Recent Activity
+                        </h6>
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Attended appointment with Student #203</li>
+                            <li class="list-group-item">Updated patient sick note</li>
+                            <li class="list-group-item">Reviewed health questionnaire</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="card professional shadow-sm p-4 mb-4">
+                        <h6 class="mb-3">
+                            <i class="bi bi-award icon-purple panel-icon"></i>
+                            Professional Info
+                        </h6>
+
+                        <p><span class="label">Qualification</span><br><strong>PhD</strong></p>
+                        <p><span class="label">Institution</span><br><strong>UCT</strong></p>
+                        <p><span class="label">Position</span><br><strong>Doctor</strong></p>
+                        <p><span class="label">Experience</span><br><strong>4 Years</strong></p>
+
+                    </div>
+
+                    <div class="card stats shadow-sm p-4">
+                        <h6 class="mb-3">
+                            <i class="bi bi-bar-chart icon-orange panel-icon"></i>
+                            System Stats
+                        </h6>
+
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted">Patients Seen</span>
+                            <strong>320</strong>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted">Appointments</span>
+                            <strong>45</strong>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <span class="text-muted">Health quests</span>
+                            <strong>18</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div id="editModal" class="custom-modal d-none">
+
+            <div class="custom-modal-content">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4>Edit Profile</h4>
+
+                    <button id="closeModal" class="btn btn-danger btn-sm">
+                        X
+                    </button>
+                </div>
+
+                <form id="editForm">
+
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <label>
+                            <input type="text" class="form-control" value="Dr Inga Plati">
+                        </label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Phone</label>
+                        <label>
+                            <input type="text" class="form-control" value="071 234 5678">
+                        </label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <label>
+                            <input type="email" class="form-control" value="inga@email.com">
+                        </label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Address</label>
+                        <input type="text" class="form-control" value="Cape Town">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Save Changes
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</main>
+<div class="modal fade" id="settingsModal" tabindex="-1">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content" style="border-radius:16px;">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title fw-bold">
+                    Settings
+                </h5>
+
+                <button class="btn-close"
+                        data-bs-dismiss="modal"></button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="card p-4 shadow-sm mb-4">
+
+                    <h6 class="text-muted mb-3">
+                        Profile Settings
+                    </h6>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Display Name
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               placeholder="Enter name">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Email
+                        </label>
+
+                        <input type="email"
+                               class="form-control">
+
+                    </div>
+
+                    <button class="btn btn-primary">
+                        Save Changes
+                    </button>
+
+                </div>
+
+                <div class="card p-4 shadow-sm mb-4">
+
+                    <h6 class="text-muted mb-3">
+                        Security
+                    </h6>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Change Password
+                        </label>
+
+                        <input type="password"
+                               class="form-control mb-2"
+                               placeholder="New password">
+
+                        <input type="password"
+                               class="form-control"
+                               placeholder="Confirm password">
+
+                    </div>
+
+                    <button class="btn btn-warning">
+                        Update Password
+                    </button>
+
+                </div>
+                <div class="card p-4 shadow-sm mb-4">
+
+                    <h6 class="text-muted mb-3">
+                        Notifications
+                    </h6>
+
+                    <div class="form-check form-switch mb-2">
+
+                        <input class="form-check-input"
+                               type="checkbox"
+                               checked>
+
+                        <label class="form-check-label">
+                            Email Notifications
+                        </label>
+
+                    </div>
+
+                    <div class="form-check form-switch">
+
+                        <input class="form-check-input"
+                               type="checkbox">
+
+                        <label class="form-check-label">
+                            SMS Alerts
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div class="card p-4 shadow-sm">
+
+                    <h6 class="text-muted mb-3">
+                        Appearance
+                    </h6>
+
+                    <div class="d-flex gap-2">
+
+                        <button id="lightModeBtn"
+                                class="btn btn-outline-primary">
+
+                            Light Mode
+
+                        </button>
+
+                        <button id="darkModeBtn"
+                                class="btn btn-dark">
+
+                            Dark Mode
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="JS/main.js"></script>
+<script src="JS/Profile.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
