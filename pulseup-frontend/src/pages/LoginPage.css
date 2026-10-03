@@ -1,0 +1,144 @@
+/* Sign-in page: layout only. Colours/glass/fields come from AuthBackground.css */
+
+.pulse-login-page {
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    overflow-x: hidden;
+}
+
+.pulse-login-card {
+    width: min(460px, 100%);
+}
+
+.pulse-login-content {
+    padding: 30px 36px 34px;
+}
+
+.pulse-login-heading {
+    margin-bottom: 24px;
+}
+
+.pulse-login-heading .pulse-auth-title {
+    font-size: clamp(1.9rem, 5vw, 2.5rem);
+}
+
+.pulse-login-form {
+    display: grid;
+    gap: 15px;
+}
+
+.pulse-login-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.pulse-login-input-wrapper > i {
+    position: absolute;
+    left: 14px;
+    z-index: 1;
+    display: grid;
+    width: 20px;
+    height: 20px;
+    place-items: center;
+    color: rgba(255, 255, 255, 0.72);
+    pointer-events: none;
+}
+
+.pulse-login-input-wrapper svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.pulse-login-input-wrapper input {
+    min-height: 50px;
+    padding: 13px 48px 13px 45px;
+}
+
+.pulse-login-password-toggle {
+    position: absolute;
+    right: 9px;
+    display: grid;
+    width: 35px;
+    height: 35px;
+    place-items: center;
+    border: 0;
+    border-radius: 9px;
+    color: rgba(255, 255, 255, 0.78);
+    background: transparent;
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.pulse-login-password-toggle:hover:not(:disabled) {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.pulse-login-password-toggle:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.pulse-login-divider {
+    display: flex;
+    align-items: center;
+    margin: 22px 0 15px;
+    gap: 14px;
+}
+
+.pulse-login-divider::before,
+.pulse-login-divider::after {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.24);
+    content: "";
+}
+
+.pulse-login-divider span {
+    color: var(--auth-text-soft);
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.pulse-login-register {
+    display: grid;
+    min-height: 48px;
+    place-items: center;
+    padding: 12px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 13px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.pulse-login-register:hover {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateY(-1px);
+}
+
+.pulse-login-support {
+    margin: 15px 0 0;
+    color: var(--auth-text-faint);
+    font-size: 0.74rem;
+    line-height: 1.55;
+    text-align: center;
+}

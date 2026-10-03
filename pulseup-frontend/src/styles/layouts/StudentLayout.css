@@ -1,0 +1,16 @@
+.student-layout {
+    min-height: 100vh;
+}
+
+.student-main-content {
+    min-height: 100vh;
+    margin-left: 250px;
+    padding: 20px;
+}
+
+@media (max-width: 850px) {
+    .student-main-content {
+        margin-left: 82px;
+        padding: 14px;
+    }
+}

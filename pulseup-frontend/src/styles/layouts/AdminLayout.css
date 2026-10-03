@@ -1,0 +1,1 @@
+.admin-layout{min-height:100vh;background:#f4f6f9}.admin-main{box-sizing:border-box;width:calc(100% - 240px);min-height:100vh;margin-left:240px;padding:0 22px 28px}.admin-dark .admin-layout{background:#111;color:#eee}@media(max-width:800px){.admin-main{width:calc(100% - 82px);margin-left:82px;padding:0 12px 20px}}

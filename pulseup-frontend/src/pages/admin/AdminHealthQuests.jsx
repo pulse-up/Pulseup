@@ -1,0 +1,21 @@
+import { useMemo, useState } from "react";
+import { healthQuestPdf } from "../../utils/adminDocumentPdf";
+import "../../styles/pages/AdminHealthQuests.css";
+
+const seed=[
+ {id:1,patient:"John Doe",patientId:"ST20301",type:"General Check",status:"Completed",date:"2026-04-20"},
+ {id:2,patient:"Sarah Smith",patientId:"ST20302",type:"Blood Test",status:"Pending",date:"2026-04-21"}
+];
+export default function AdminHealthQuests(){
+ const [quests,setQuests]=useState(seed),[createOpen,setCreateOpen]=useState(false),[selected,setSelected]=useState(null);
+ const [form,setForm]=useState({patient:"",patientId:"",type:"General Check",date:""});
+ const total=quests.length,completed=useMemo(()=>quests.filter(q=>q.status==="Completed").length,[quests]),pending=useMemo(()=>quests.filter(q=>q.status==="Pending").length,[quests]);
+ const create=e=>{e.preventDefault();if(!form.patient.trim()||!form.patientId.trim()||!form.date){alert("Please complete all Healthquest fields.");return}setQuests(q=>[{id:Date.now(),...form,status:"Pending"},...q]);setForm({patient:"",patientId:"",type:"General Check",date:""});setCreateOpen(false);alert("Healthquest created successfully.")};
+ return <div className="admin-healthquests-page">
+  <div className="hq-page-intro"><div><h2>Healthquests</h2><p>Manage patient health questionnaires</p></div><button onClick={()=>setCreateOpen(true)}>+ Create Healthquest</button></div>
+  <section className="hq-admin-stats"><article className="total"><div><span>▤</span> Total Healthquests</div><strong>{total}</strong></article><article className="completed"><div><span>✓</span> Completed</div><strong>{completed}</strong></article><article className="pending"><div><span>!</span> Pending</div><strong>{pending}</strong></article></section>
+  <section className="hq-admin-table-panel"><div className="hq-table-title"><span>☷</span><h3>Recent Healthquests</h3></div><div className="hq-table-scroll"><table><thead><tr><th>Patient Name</th><th>Quest Type</th><th>Status</th><th>Date</th><th>Action</th></tr></thead><tbody>{quests.map(q=><tr key={q.id}><td>{q.patient}</td><td>{q.type}</td><td><span className={`hq-status ${q.status.toLowerCase()}`}>{q.status}</span></td><td>{q.date}</td><td><div className="hq-row-actions"><button className="hq-view" onClick={()=>setSelected(q)}>View</button><button className="hq-download" onClick={()=>healthQuestPdf(q)}>Download PDF</button></div></td></tr>)}</tbody></table></div></section>
+  {createOpen&&<div className="admin-modal-backdrop" onMouseDown={()=>setCreateOpen(false)}><section className="hq-modal wide" onMouseDown={e=>e.stopPropagation()}><div className="admin-modal-head"><h2>Create Healthquest</h2><button onClick={()=>setCreateOpen(false)}>×</button></div><form onSubmit={create}><div className="hq-form-grid"><label>Patient Name<input value={form.patient} onChange={e=>setForm({...form,patient:e.target.value})}/></label><label>Patient ID<input value={form.patientId} onChange={e=>setForm({...form,patientId:e.target.value})}/></label><label>Type<select value={form.type} onChange={e=>setForm({...form,type:e.target.value})}><option>General Check</option><option>Blood Test</option></select></label><label>Date<input type="date" value={form.date} onChange={e=>setForm({...form,date:e.target.value})}/></label></div><div className="hq-modal-actions"><button type="button" onClick={()=>setCreateOpen(false)}>Cancel</button><button type="submit">Save</button></div></form></section></div>}
+  {selected&&<div className="admin-modal-backdrop" onMouseDown={()=>setSelected(null)}><section className="hq-modal" onMouseDown={e=>e.stopPropagation()}><div className="admin-modal-head"><h2>Healthquest Details</h2><button onClick={()=>setSelected(null)}>×</button></div><div className="hq-details"><p><span>Patient Name</span><strong>{selected.patient}</strong></p><p><span>Patient ID</span><strong>{selected.patientId}</strong></p><p><span>Quest Type</span><strong>{selected.type}</strong></p><p><span>Status</span><strong>{selected.status}</strong></p><p><span>Date</span><strong>{selected.date}</strong></p></div><div className="hq-detail-actions"><button onClick={()=>healthQuestPdf(selected)}>Download PDF</button><button className="hq-close" onClick={()=>setSelected(null)}>Close</button></div></section></div>}
+ </div>
+}
