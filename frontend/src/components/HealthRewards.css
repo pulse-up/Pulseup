@@ -1,0 +1,560 @@
+.modern-rewards {
+    display: grid;
+    width: min(100%, 960px);
+    margin: 0 auto;
+    padding: 2px 0 32px;
+    gap: 18px;
+}
+
+.modern-rewards * {
+    box-sizing: border-box;
+}
+
+.modern-rewards__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.modern-rewards__eyebrow {
+    margin: 0;
+    color: #0876bd;
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+}
+
+.modern-rewards__header h2 {
+    margin: 6px 0;
+    color: #102a43;
+    font-size: 1.5rem;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+}
+
+.modern-rewards__description {
+    max-width: 570px;
+    margin: 0;
+    color: #687b8c;
+    font-size: 0.78rem;
+    line-height: 1.55;
+}
+
+.modern-rewards__balance {
+    display: grid;
+    min-width: 158px;
+    padding: 12px 15px;
+    border: 1px solid #dbe6ed;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(17, 52, 78, 0.06);
+    text-align: right;
+}
+
+.modern-rewards__balance span,
+.modern-rewards__balance small {
+    color: #718290;
+    font-size: 0.59rem;
+    font-weight: 700;
+}
+
+.modern-rewards__balance strong {
+    margin: 2px 0;
+    color: #0876bd;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.modern-voucher {
+    display: grid;
+    grid-template-columns:
+    minmax(260px, 0.9fr)
+    minmax(350px, 1.1fr);
+    min-height: 282px;
+    overflow: hidden;
+    border: 1px solid #d9e5ec;
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 18px 42px rgba(17, 52, 78, 0.1);
+}
+
+.modern-voucher__media {
+    position: relative;
+    min-height: 282px;
+    overflow: hidden;
+    background: #07597f;
+}
+
+.modern-voucher__media > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.modern-voucher__shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            180deg,
+            rgba(5, 42, 64, 0.04),
+            rgba(5, 42, 64, 0.82)
+    );
+}
+
+.modern-voucher__media-copy {
+    position: absolute;
+    right: 21px;
+    bottom: 21px;
+    left: 21px;
+    color: #ffffff;
+}
+
+.modern-voucher__media-copy > span {
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 0.56rem;
+    font-weight: 900;
+    letter-spacing: 0.13em;
+}
+
+.modern-voucher__media-copy h3 {
+    max-width: 310px;
+    margin: 7px 0 0;
+    color: #ffffff;
+    font-size: 1.4rem;
+    line-height: 1.16;
+    letter-spacing: -0.035em;
+}
+
+.modern-voucher__partner {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 15px;
+    padding: 9px 12px;
+    gap: 8px;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 10px 24px rgba(6, 42, 65, 0.2);
+}
+
+.modern-voucher__partner i {
+    width: 9px;
+    height: 9px;
+    flex: none;
+    border-radius: 50%;
+    background: #93d34b;
+}
+
+.modern-voucher__partner > div {
+    display: grid;
+}
+
+.modern-voucher__partner small {
+    color: #667986;
+    font-size: 0.44rem;
+    font-weight: 900;
+}
+
+.modern-voucher__partner strong {
+    color: #102a43;
+    font-size: 0.83rem;
+}
+
+.modern-voucher__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 26px 29px;
+}
+
+.modern-voucher__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.modern-voucher__header p {
+    margin: 0 0 4px;
+    color: #0876bd;
+    font-size: 0.57rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+}
+
+.modern-voucher__header h3 {
+    margin: 0;
+    color: #102a43;
+    font-size: 1.29rem;
+    letter-spacing: -0.03em;
+}
+
+.modern-voucher__status {
+    padding: 7px 10px;
+    border-radius: 999px;
+    color: #47651f;
+    background: #eaf7d8;
+    font-size: 0.6rem;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.modern-voucher__status.is-unlocked {
+    color: #08724a;
+    background: #ddf7e9;
+}
+
+.modern-voucher__progress-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 21px;
+}
+
+.modern-voucher__progress-heading span {
+    color: #6d7e8b;
+    font-size: 0.64rem;
+    font-weight: 700;
+}
+
+.modern-voucher__progress-heading strong {
+    color: #102a43;
+    font-size: 0.69rem;
+}
+
+.modern-voucher__progress {
+    height: 9px;
+    margin-top: 9px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #dceafa;
+}
+
+.modern-voucher__progress > span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(
+            90deg,
+            #0876bd,
+            #75ad32
+    );
+    transition: width 0.35s ease;
+}
+
+.modern-voucher__progress-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 7px;
+}
+
+.modern-voucher__progress-footer span {
+    color: #8a969f;
+    font-size: 0.55rem;
+}
+
+.modern-voucher__progress-footer strong {
+    color: #102a43;
+    font-size: 0.6rem;
+}
+
+.modern-voucher__metrics {
+    display: grid;
+    grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+    margin-top: 16px;
+    gap: 9px;
+}
+
+.modern-voucher__metrics article {
+    padding: 10px 11px;
+    border: 1px solid #e1e9ee;
+    border-radius: 10px;
+    background: #f7fafc;
+}
+
+.modern-voucher__metrics span,
+.modern-voucher__metrics strong {
+    display: block;
+}
+
+.modern-voucher__metrics span {
+    margin-bottom: 4px;
+    color: #758592;
+    font-size: 0.55rem;
+}
+
+.modern-voucher__metrics strong {
+    color: #102a43;
+    font-size: 0.73rem;
+}
+
+.modern-voucher__notice {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 14px;
+    padding: 10px 11px;
+    gap: 9px;
+    border-radius: 10px;
+    color: #4f672d;
+    background: #f0f8e6;
+}
+
+.modern-voucher__notice.is-success {
+    color: #08724a;
+    background: #e4f8ee;
+}
+
+.modern-voucher__notice > span {
+    display: grid;
+    width: 20px;
+    height: 20px;
+    flex: none;
+    place-items: center;
+    border-radius: 50%;
+    color: #ffffff;
+    background: #75ad32;
+    font-size: 0.64rem;
+    font-weight: 900;
+}
+
+.modern-voucher__notice.is-success > span {
+    background: #15936a;
+}
+
+.modern-voucher__notice p {
+    margin: 1px 0 0;
+    font-size: 0.65rem;
+    line-height: 1.44;
+}
+
+.modern-rewards__steps {
+    display: grid;
+    grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+    gap: 11px;
+}
+
+.modern-rewards__steps article {
+    display: flex;
+    align-items: flex-start;
+    padding: 13px;
+    gap: 10px;
+    border: 1px solid #dbe6ed;
+    border-radius: 13px;
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(17, 52, 78, 0.04);
+}
+
+.modern-rewards__steps article > span {
+    display: grid;
+    width: 29px;
+    height: 29px;
+    flex: none;
+    place-items: center;
+    border-radius: 8px;
+    color: #ffffff;
+    background: #0876bd;
+    font-size: 0.56rem;
+    font-weight: 900;
+}
+
+.modern-rewards__steps strong {
+    color: #102a43;
+    font-size: 0.69rem;
+}
+
+.modern-rewards__steps p {
+    margin: 4px 0 0;
+    color: #71818e;
+    font-size: 0.6rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 780px) {
+    .modern-rewards__header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .modern-rewards__balance {
+        width: 100%;
+        text-align: left;
+    }
+
+    .modern-voucher {
+        grid-template-columns: 1fr;
+    }
+
+    .modern-voucher__media {
+        min-height: 220px;
+    }
+
+    .modern-rewards__steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .modern-voucher__content {
+        padding: 22px 17px;
+    }
+
+    .modern-voucher__header {
+        flex-direction: column;
+    }
+
+    .modern-voucher__metrics {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Compact reward-card proportions and adaptive image treatment */
+.modern-rewards {
+    width: min(820px, calc(100% - 40px));
+    padding: 2px 0 28px;
+    gap: 14px;
+}
+
+.modern-rewards__header {
+    align-items: center;
+    flex-direction: row;
+    gap: 18px;
+}
+
+.modern-rewards__description {
+    max-width: 520px;
+}
+
+.modern-rewards__balance {
+    width: auto;
+    min-width: 140px;
+    padding: 10px 13px;
+}
+
+.modern-voucher {
+    grid-template-columns: minmax(220px, 0.78fr) minmax(320px, 1.22fr);
+    min-height: 250px;
+    border-radius: 18px;
+}
+
+.modern-voucher__media {
+    min-height: 250px;
+}
+
+.modern-voucher__media > img {
+    object-position: 50% 28%;
+}
+
+.modern-voucher__media-copy {
+    right: 17px;
+    bottom: 17px;
+    left: 17px;
+}
+
+.modern-voucher__media-copy h3 {
+    margin-top: 5px;
+    font-size: 1.15rem;
+}
+
+.modern-voucher__partner {
+    margin-top: 11px;
+    padding: 7px 10px;
+}
+
+.modern-voucher__content {
+    padding: 21px 24px;
+}
+
+.modern-voucher__progress-heading {
+    margin-top: 16px;
+}
+
+.modern-voucher__metrics {
+    margin-top: 12px;
+}
+
+.modern-voucher__notice {
+    margin-top: 11px;
+}
+
+.modern-rewards__steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+}
+
+.modern-rewards__steps article {
+    padding: 11px;
+}
+
+@media (max-width: 680px) {
+    .modern-rewards {
+        width: min(100% - 24px, 820px);
+    }
+
+    .modern-rewards__header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .modern-rewards__balance {
+        width: min(180px, 100%);
+        text-align: left;
+    }
+
+    .modern-voucher {
+        grid-template-columns: 1fr;
+    }
+
+    .modern-voucher__media {
+        min-height: clamp(240px, 78vw, 330px);
+        background: #063e5c;
+    }
+
+    .modern-voucher__media > img {
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .modern-rewards__steps {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    .modern-voucher__content {
+        padding: 19px 16px;
+    }
+
+    .modern-voucher__header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 9px;
+    }
+
+    .modern-voucher__metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .modern-voucher__media-copy {
+        right: 14px;
+        bottom: 14px;
+        left: 14px;
+    }
+
+    .modern-voucher__media-copy h3 {
+        max-width: 260px;
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .modern-voucher__metrics,
+    .modern-rewards__steps {
+        grid-template-columns: 1fr;
+    }
+}

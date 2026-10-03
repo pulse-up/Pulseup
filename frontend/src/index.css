@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 0;
+    overflow-x: hidden;
+    background: #f5f7fa;
+    font-family: Arial, sans-serif;
+}
+
+body.dark-mode {
+    background: #121212;
+    color: #ffffff;
+}

@@ -1,0 +1,178 @@
+/* Check-your-email and verify-email pages. Colours/glass come from AuthBackground.css */
+
+.pulse-verify-page {
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    overflow-x: hidden;
+}
+
+.pulse-verify-page .pulse-responsive-header__logo {
+    display: none;
+}
+
+.pulse-verify-page .pulse-responsive-header__inner {
+    justify-content: flex-end;
+}
+
+.pulse-verify-card {
+    width: min(460px, 100%);
+}
+
+.pulse-verify-content {
+    display: grid;
+    justify-items: center;
+    gap: 14px;
+    padding: 34px 36px 34px;
+    text-align: center;
+}
+
+.pulse-verify-icon {
+    display: grid;
+    width: 68px;
+    height: 68px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.pulse-verify-icon svg {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.pulse-verify-icon.is-success {
+    border-color: var(--auth-success);
+    background: rgba(134, 239, 184, 0.16);
+}
+
+.pulse-verify-icon.is-success svg {
+    stroke: var(--auth-success);
+}
+
+.pulse-verify-icon.is-error {
+    border-color: #ff9d9d;
+    background: rgba(255, 157, 157, 0.14);
+}
+
+.pulse-verify-icon.is-error svg {
+    stroke: var(--auth-danger);
+}
+
+.pulse-verify-spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: pulse-verify-spin 0.9s linear infinite;
+}
+
+@keyframes pulse-verify-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pulse-verify-spinner {
+        animation-duration: 3s;
+    }
+}
+
+.pulse-verify-content .pulse-auth-title {
+    font-size: clamp(1.7rem, 5vw, 2.1rem);
+}
+
+.pulse-verify-content .pulse-auth-lead {
+    margin-top: 0;
+}
+
+.pulse-verify-email {
+    color: #ffffff;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+.pulse-verify-actions {
+    display: grid;
+    width: 100%;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.pulse-verify-actions .pulse-auth-submit {
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+}
+
+.pulse-verify-secondary {
+    display: grid;
+    min-height: 46px;
+    place-items: center;
+    padding: 11px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 13px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 0.84rem;
+    font-weight: 900;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.pulse-verify-secondary:hover:not(:disabled) {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.pulse-verify-secondary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.pulse-verify-note {
+    margin: 0;
+    color: var(--auth-success);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.pulse-verify-hint {
+    margin: 4px 0 0;
+    color: var(--auth-text-faint);
+    font-size: 0.76rem;
+    line-height: 1.55;
+}
+
+.pulse-verify-form {
+    display: grid;
+    width: 100%;
+    gap: 12px;
+    text-align: left;
+}
+
+.pulse-verify-content .pulse-auth-message {
+    width: 100%;
+    text-align: left;
+}
+
+@media (max-width: 560px) {
+    .pulse-verify-page {
+        padding: 12px;
+    }
+
+    .pulse-verify-content {
+        padding: 28px 20px 28px;
+    }
+}

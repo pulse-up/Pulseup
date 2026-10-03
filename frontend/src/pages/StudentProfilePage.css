@@ -1,0 +1,247 @@
+.sp-page {
+  --sp-navy: #0f1e3c;
+  --sp-teal: #0c7a6e;
+  --sp-bg: #f0f3f8;
+  --sp-card: #ffffff;
+  --sp-border: #dde3ec;
+  --sp-muted: #8a96a8;
+  --sp-text: #1a2340;
+
+  padding: 24px 28px;
+  color: var(--sp-text);
+}
+
+.sp-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 24px;
+  align-items: start;
+}
+
+.sp-action-bar {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.sp-message {
+  margin: 0 auto 0 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sp-message-success {
+  color: #15803d;
+}
+
+.sp-message-error {
+  color: #b91c1c;
+}
+
+.sp-button-reset,
+.sp-button-save {
+  height: 36px;
+  padding: 0 20px;
+  border-radius: 9px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.sp-button-reset {
+  border: 1px solid var(--sp-border);
+  background: var(--sp-card);
+  color: var(--sp-text);
+}
+
+.sp-button-save {
+  border: none;
+  background: var(--sp-navy);
+  color: #ffffff;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.sp-button-save:hover {
+  background: var(--sp-teal);
+}
+
+.sp-card {
+  padding: 28px 32px 32px;
+  border: 1px solid var(--sp-border);
+  border-radius: 18px;
+  background: var(--sp-card);
+}
+
+.sp-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 8px;
+}
+
+.sp-header h2 {
+  margin: 0 0 6px;
+  color: var(--sp-navy);
+  font-size: 22px;
+  letter-spacing: -0.3px;
+}
+
+.sp-avatar-wrap {
+  position: relative;
+  width: 72px;
+  height: 72px;
+}
+
+.sp-avatar {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c9d4e8, #a0b0cc);
+  color: var(--sp-navy);
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sp-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sp-avatar-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 30, 60, 0.45);
+  color: #ffffff;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.sp-avatar:hover .sp-avatar-overlay,
+.sp-avatar:focus-visible .sp-avatar-overlay {
+  opacity: 1;
+}
+
+.sp-badge {
+  display: inline-flex;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sp-link-button {
+  margin-left: 10px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--sp-teal);
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.sp-section-label {
+  margin: 26px 0 16px;
+  color: var(--sp-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.sp-section-label-first {
+  margin-top: 0;
+}
+
+.sp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.sp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--sp-muted);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.sp-field input,
+.sp-field select {
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--sp-border);
+  border-radius: 8px;
+  background: var(--sp-bg);
+  color: var(--sp-navy);
+  font-size: 13px;
+  text-transform: none;
+  outline: none;
+}
+
+.sp-field input:focus,
+.sp-field select:focus {
+  border-color: var(--sp-teal);
+  background: #ffffff;
+}
+
+.sp-field small {
+  font-size: 10px;
+  text-transform: none;
+}
+
+.sp-health-card {
+  position: sticky;
+  top: 24px;
+  padding: 22px;
+}
+
+.dark-mode .sp-page {
+  --sp-navy: #e5e7eb;
+  --sp-bg: #1f2937;
+  --sp-card: #111827;
+  --sp-border: #374151;
+  --sp-muted: #9ca3af;
+  --sp-text: #f3f4f6;
+}
+
+.dark-mode .sp-button-save {
+  background: #0c7a6e;
+}
+
+@media (max-width: 900px) {
+  .sp-form {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-health-card {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .sp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-card {
+    padding: 20px;
+  }
+}
