@@ -1,0 +1,390 @@
+.voucher-dashboard-section {
+    width: min(calc(100% - 48px), 1100px);
+    margin: 0 auto 20px;
+}
+
+.cyngatha-voucher-card {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns:
+        minmax(250px, 0.82fr)
+        minmax(0, 1.18fr);
+    min-height: 360px;
+    border: 1px solid #dfe7ef;
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow:
+            0 18px 45px rgba(16, 42, 67, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.cyngatha-voucher-visual {
+    position: relative;
+    min-height: 360px;
+
+    /*
+     * Optional partner image:
+     * public/images/cyngatha-team.jpg
+     */
+    background:
+            linear-gradient(
+                    145deg,
+                    rgba(8, 26, 43, 0.2),
+                    rgba(5, 23, 38, 0.76)
+            ),
+            url("/images/cyngatha-team.jpg")
+            center 25% / cover no-repeat,
+            linear-gradient(
+                    145deg,
+                    #35495d,
+                    #132638
+            );
+}
+
+.cyngatha-image-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+            radial-gradient(
+                    circle at 50% 20%,
+                    transparent,
+                    rgba(4, 17, 30, 0.18)
+            );
+}
+
+.cyngatha-powered-card {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    display: grid;
+    min-width: 165px;
+    gap: 6px;
+    border-radius: 20px;
+    padding: 16px 18px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #0f2945;
+    box-shadow: 0 16px 35px rgba(4, 20, 35, 0.25);
+    transform: translateX(-50%);
+}
+
+.cyngatha-powered-card > span {
+    font-size: 0.62rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+}
+
+.cyngatha-powered-card strong {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.45rem;
+}
+
+.cyngatha-powered-card i {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #8ecf40;
+}
+
+.cyngatha-voucher-content {
+    display: flex;
+    flex-direction: column;
+    padding: 34px 38px;
+}
+
+.cyngatha-voucher-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.cyngatha-eyebrow {
+    margin: 0 0 8px;
+    color: #507328;
+    font-size: 0.64rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+}
+
+.cyngatha-voucher-heading h2 {
+    margin: 0;
+    color: #102a43;
+    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+    line-height: 1.25;
+}
+
+.voucher-quest-badge {
+    flex-shrink: 0;
+    border-radius: 999px;
+    padding: 9px 14px;
+    font-size: 0.74rem;
+    font-weight: 800;
+}
+
+.voucher-quest-badge.active {
+    background: #e8f7cc;
+    color: #274d0a;
+}
+
+.voucher-quest-badge.complete {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.voucher-progress-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.voucher-current-tier {
+    border-radius: 999px;
+    padding: 6px 10px;
+    background: #eaf9d5;
+    color: #365914;
+    font-size: 0.68rem;
+    font-weight: 800;
+}
+
+.voucher-progress-summary > strong {
+    color: #183653;
+    font-size: 0.82rem;
+}
+
+.voucher-progress-track {
+    overflow: hidden;
+    height: 9px;
+    margin-top: 14px;
+    border-radius: 999px;
+    background: #dceafa;
+}
+
+.voucher-progress-track > span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(
+            90deg,
+            #284f08,
+            #4e7c1c
+    );
+    transition: width 400ms ease;
+}
+
+.voucher-tier-markers {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.voucher-tier-markers span {
+    color: #667085;
+    font-size: 0.68rem;
+    font-weight: 700;
+}
+
+.voucher-tier-markers .reached {
+    color: #284f08;
+}
+
+.voucher-tier-markers .next {
+    color: #102a43;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.voucher-health-points {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+    margin-top: 24px;
+}
+
+.voucher-health-points > div {
+    display: grid;
+    gap: 5px;
+    border: 1px solid #e2ead8;
+    border-radius: 11px;
+    padding: 11px;
+    background: #fbfdf8;
+}
+
+.voucher-health-points span {
+    color: #6a7c57;
+    font-size: 0.56rem;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+}
+
+.voucher-health-points strong {
+    color: #223b0f;
+    font-size: 1rem;
+}
+
+.voucher-progress-message {
+    margin: 20px 0 0;
+    color: #525866;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.active-voucher-box {
+    margin-top: 18px;
+    border: 1px solid #cde5ac;
+    border-radius: 14px;
+    padding: 15px;
+    background:
+            linear-gradient(
+                    145deg,
+                    #f8fff0,
+                    #effbdd
+            );
+}
+
+.active-voucher-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.active-voucher-heading > div {
+    display: grid;
+    gap: 4px;
+}
+
+.active-voucher-heading > div span,
+.voucher-code-box > span {
+    color: #61734d;
+    font-size: 0.58rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+}
+
+.active-voucher-heading > div strong {
+    color: #294b0f;
+    font-size: 1.5rem;
+}
+
+.active-voucher-status {
+    border-radius: 999px;
+    padding: 6px 9px;
+    background: #dcfce7;
+    color: #166534;
+    font-size: 0.62rem;
+    font-weight: 900;
+}
+
+.voucher-code-box {
+    display: grid;
+    gap: 5px;
+    margin-top: 12px;
+    border: 1px dashed #8eb260;
+    border-radius: 9px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.65);
+}
+
+.voucher-code-box strong {
+    overflow-wrap: anywhere;
+    color: #183653;
+    font-family: Consolas, monospace;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+}
+
+.active-voucher-box > p {
+    margin: 10px 0 0;
+    color: #59694a;
+    font-size: 0.73rem;
+}
+
+.voucher-locked-message {
+    margin: 18px 0 0;
+    border-left: 3px solid #8ecf40;
+    padding: 10px 12px;
+    background: #f6faef;
+    color: #5b6750;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.voucher-refresh-button {
+    align-self: flex-start;
+    margin-top: 16px;
+    border: 1px solid #ccd8c1;
+    border-radius: 9px;
+    padding: 8px 12px;
+    background: #ffffff;
+    color: #355816;
+    font-size: 0.74rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.voucher-refresh-button:hover:not(:disabled) {
+    background: #f4faec;
+}
+
+.voucher-refresh-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.voucher-inline-error {
+    margin: 12px 0 0;
+    color: #b42318;
+    font-size: 0.75rem;
+}
+
+.voucher-loading-card,
+.voucher-error-card {
+    display: grid;
+    min-height: 180px;
+    place-items: center;
+    padding: 30px;
+    color: #667085;
+    text-align: center;
+}
+
+.voucher-error-card h2 {
+    margin-top: 0;
+    color: #102a43;
+}
+
+@media (max-width: 760px) {
+    .cyngatha-voucher-card {
+        grid-template-columns: 1fr;
+    }
+
+    .cyngatha-voucher-visual {
+        min-height: 230px;
+    }
+
+    .cyngatha-powered-card {
+        bottom: 24px;
+    }
+
+    .cyngatha-voucher-content {
+        padding: 26px 22px;
+    }
+}
+
+@media (max-width: 620px) {
+    .voucher-dashboard-section {
+        width: min(calc(100% - 32px), 1100px);
+    }
+
+    .cyngatha-voucher-heading {
+        flex-direction: column;
+    }
+
+    .voucher-health-points {
+        grid-template-columns: 1fr;
+    }
+}
